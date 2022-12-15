@@ -12,7 +12,7 @@
     --dark-red: #670007;
 }
 
-*, *:before, *:after {
+* {
     box-sizing: border-box;
 }
 
@@ -27,14 +27,14 @@ body {
     font-family: "Proxima Nova", sans-serif;
 }
 
-nav {
+header {
     background-color: var(--darker-blue);
 }
 
 main {
-    position: relative;
-    max-width: 1280px;
-    margin: auto 80px;
+    max-width: 1000px;
+    padding: 0 16px;
+    margin: auto 64px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -75,7 +75,7 @@ section {
 }
 
 p, li {
-    font-size: 24px;
+    font-size: 18px;
     color: var(--light-blue);
 }
 
@@ -94,6 +94,10 @@ button {
 
 #home h2, #about h3, #projects h3, #contact h3 {
     margin-bottom: 40px;
+}
+
+.p-link {
+    font-size: 24px;
 }
 
 .yellow-txt {
@@ -132,7 +136,7 @@ a.btn-yellow {
 
 .nav-logo img {
     background-color: var(--darkest-blue);
-    width: 200px;
+    max-width: 200px;
 }
 
 .nav-menu {
@@ -188,10 +192,9 @@ a.btn-yellow {
     padding: 8px 16px;
 }
 
-.project-details {
-    width: 70%;
+/* .project-details {
     min-width: 430px;
-}
+} */
 
 .project-details p, .project-details li {
     font-size: 18px;
@@ -257,10 +260,10 @@ a.btn-yellow {
 
 .wp-block-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     margin-top: 32px;
 }
-
 .wp-block-button a {
     background-color: var(--light-blue);
     color: var(--darker-blue);
@@ -331,4 +334,11 @@ a.btn-yellow {
 
 #socials a:hover {
     opacity: 0.4;
+}
+
+@media (max-width: 1000px) {
+    .wp-block-button a {
+        padding: 8px 12px;
+    }
+    
 }
