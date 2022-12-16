@@ -45,32 +45,63 @@ projects(url);
 const logo = document.querySelector("#logo");
 const navMenu = document.querySelector(".nav-menu");
 const navToggle = document.querySelector("#navToggle");
-const menuLinks = document.querySelectorAll(".menu-link");
+const navLinks = document.querySelectorAll(
+  "#navHome, #navAbout, #navProjects, #navContact"
+);
 
-function logoCheck() {
+function checkWidth() {
   let screenWidth = window.innerWidth;
+  if (screenWidth <= 768) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-  if (screenWidth < 769) {
+function displayMenu() {
+  if (navMenu.style.display === "none") {
+    navMenu.style.display = "flex";
+    navToggle.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+  } else {
+    navMenu.style.display = "none";
+    navToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+  }
+}
+
+function addClass() {
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].className = "menu-link";
+  }
+}
+
+function removeClass() {
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].className = "";
+  }
+}
+
+function closeMenu() {
+  const menuLinks = document.querySelectorAll(".menu-link");
+  for (let i = 0; i < menuLinks.length; i++) {
+    menuLinks[i].onclick = function () {
+      navMenu.style.display = "none";
+    };
+  }
+}
+
+function navChanges() {
+  if (checkWidth()) {
     logo.innerHTML = `<img src="images/MBH_Logo_NoName.png" alt="Mathias B. Herholdt logo">`;
     navMenu.style.display = "none";
+    navToggle.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+    addClass();
   } else {
     logo.innerHTML = `<img src="images/MBH_Logo.png" alt="Mathias B. Herholdt logo">`;
     navMenu.style.display = "flex";
+    removeClass();
   }
 }
 
-function toggleMenu() {
-  if (navMenu.style.display === "none") {
-    navMenu.style.display = "flex";
-  } else {
-    navMenu.style.display = "none";
-  }
-}
-
-window.onload = logoCheck;
-window.onresize = logoCheck;
-
-navToggle.addEventListener("click", toggleMenu);
-for (let i = 0; i < menuLinks.length; i++) {
-  menuLinks[i].addEventListener("click", toggleMenu);
-}
+navToggle.onclick = displayMenu;
+window.onload = navChanges;
+window.onresize = navChanges;
