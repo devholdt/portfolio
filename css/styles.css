@@ -32,7 +32,6 @@ header {
 }
 
 main {
-    max-width: 1000px;
     padding: 0 16px;
     margin: auto 64px;
 }
@@ -71,7 +70,7 @@ h5 {
 
 section {
     margin-bottom: 500px;
-    margin-right: 40px;
+    max-width: 1000px;
 }
 
 p, li {
@@ -108,7 +107,7 @@ a.cta {
     position: relative;
     top: 16px;
     padding: 17px 54px 18px 54px;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 24px;
 }
 
@@ -128,6 +127,9 @@ a.btn-yellow {
 }
 
 /* NAV MENU */
+#navToggle {
+    display: none;
+}
 
 .nav-container {
     position: sticky;
@@ -136,6 +138,7 @@ a.btn-yellow {
 
 .nav-logo img {
     background-color: var(--darkest-blue);
+    width: 100%;
     max-width: 200px;
 }
 
@@ -149,7 +152,8 @@ a.btn-yellow {
     padding: 16px;
     font-size: 18px;
     text-align: center;
-    border-bottom: 2px solid var(--dark-blue);
+    border: 2px solid var(--dark-blue);
+    border-style: none none solid none;
 }
 
 .nav-menu a:first-child {
@@ -157,12 +161,15 @@ a.btn-yellow {
 }
 
 /* ABOUT */
+.about-content {
+    display: flex;
+    gap: 16px;
+}
 
 .about-img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    float: right;
     background: rgba(17, 22, 41, 0.5);
 }
 
@@ -175,7 +182,6 @@ a.btn-yellow {
 }
 
 /* PROJECTS */
-
 .project-info {
     margin: 0px;
     font-size: 18px;
@@ -185,19 +191,9 @@ a.btn-yellow {
 
 .projects-container {
     display: flex;
-    justify-content: space-between;
     gap: 20px;
     margin-top: 40px;
     background-color: var(--dark-blue);
-    padding: 8px 16px;
-}
-
-/* .project-details {
-    min-width: 430px;
-} */
-
-.project-details p, .project-details li {
-    font-size: 18px;
 }
 
 .project-list {
@@ -212,7 +208,7 @@ a.btn-yellow {
     var(--light-yellow) 88%,
     var(--light-blue) 100%) border-box;
 
-    width: 250px;
+    min-width: 235px;
     height: 350px;
     border-radius: 10px;
     border: 4px solid transparent;
@@ -253,9 +249,11 @@ a.btn-yellow {
     width: 100%;
     height: 100%;
     opacity: 0.8;
-    border: 12px solid var(--dark-grey);
-    border-bottom: 36px solid var(--dark-grey);
-    border-radius: 7px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(30deg,
+    var(--darker-blue),
+    var(--darkest-blue)) 1;
 }
 
 .wp-block-buttons {
@@ -281,7 +279,6 @@ a.btn-yellow {
 }
 
 /* CONTACT */
-
 #socials {
     position: fixed;
     display: flex;
@@ -298,7 +295,7 @@ a.btn-yellow {
 
 #back {
     background-color: var(--darkest-blue);
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--yellow);
     font-size: 24px;
     padding: 12px 32px;
@@ -307,38 +304,272 @@ a.btn-yellow {
 }
 
 /* HOVER EFFECTS */
-
-.nav-menu a:hover {
-    background-color: var(--light-blue);
-    color: var(--darkest-blue);
-}
-
-.cta:hover, #back:hover {
-    background-color: var(--lighter-blue);
-    color: var(--darkest-blue);
-}
-
-.wp-block-button a:hover {
-    background-color: var(--darkest-blue);
-    color: var(--lighter-blue);
-}
-
-.list-btn:hover {
-    font-size: 19px;
-    font-weight: 400;
-}
-
-#resetBtn:hover {
-    padding: 2px 16px;
-}
-
-#socials a:hover {
-    opacity: 0.4;
-}
-
-@media (max-width: 1000px) {
-    .wp-block-button a {
-        padding: 8px 12px;
+@media (min-width: 769px) {
+    .nav-menu a:hover {
+        background-color: var(--light-blue);
+        color: var(--darkest-blue);
     }
     
+    .cta:hover, #back:hover {
+        background-color: var(--lighter-blue);
+        color: var(--darkest-blue);
+    }
+    
+    .wp-block-button a:hover {
+        background-color: var(--darkest-blue);
+        color: var(--lighter-blue);
+    }
+    
+    .list-btn:hover {
+        padding-left: 8px;
+        border-image: linear-gradient(to right,
+        var(--dark-red),
+        var(--red)) 1;
+    }
+    
+    #resetBtn:hover {
+        padding: 2px 16px;
+    }
+    
+    #socials a:hover {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 1332px) {
+    .about-content {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1023px) {
+    main {
+        margin: auto 32px;
+    }
+
+    h1 {
+        font-size: 74px;
+        line-height: 75px;
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    p, .list-btn {
+        font-size: 16px;
+    }
+
+    a.cta {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+
+    .about-img {
+        width: 150px;
+        height: 250px;
+        border-radius: 10px;
+    }
+
+    .about-txt p:first-of-type {
+        margin-top: 0;
+    }
+
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    #details {
+        order: 2;
+    }
+
+    .project-list {
+        min-width: 100%;
+        height: auto;
+        padding: 32px;
+    }
+
+    .project-details .wp-block-buttons:last-of-type a {
+        padding: 8px 12px;
+    }
+
+    #back {
+        font-size: 20px;
+        padding: 8px 16px;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    header {
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 2px 5px var(--darker-blue);
+        z-index: 1;
+    }
+
+    .nav-logo {
+        display: flex;
+        justify-content: center;
+        background-color: var(--darkest-blue);
+    }
+
+    .nav-logo img {
+        width: 70px;
+        padding: 12px 0;
+    }
+
+    .nav-logo::after {
+        content: "Mathias B. Herholdt";
+        color: var(--lighter-blue);
+        margin: auto 8px;
+    }
+
+    .nav-menu {
+        display: none;
+        margin: 0;
+        border-top: 2px solid var(--dark-blue);
+        padding: 24px 0;
+    }
+
+    .nav-menu a, .nav-menu a:first-child {
+        border-style: none;
+        padding: 24px 0;
+        font-weight: 300;
+    }
+
+    #navToggle {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        border: none;
+        background-color: var(--darkest-blue);
+        color: var(--white-blue);
+        padding: 4px 12px;
+        font-size: 30px;
+        font-weight: 100;
+    }
+
+    main {
+        margin: auto 24px;
+    }
+
+    h1 {
+        font-size: 66px;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    h3 {
+        font-size: 36px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    section {
+        margin-bottom: 700px;
+    }
+
+    .projects-container {
+        margin-top: 8px;
+    }
+
+    #details {
+        padding: 0 16px;
+    }
+
+    .project-list li {
+        margin-bottom: 12px;
+    }
+
+    .list-btn {
+        font-weight: 400;
+        padding: 0 10px 6px 10px;
+        border-style: solid;
+        border-width: 1px;
+    }
+
+    .list-btn::after {
+        content: "\203A";
+        margin-left: 4px;
+        font-size: 24px;
+    }
+
+    #contact {
+        margin-bottom: 300px;
+    }
+
+    #back {
+        margin-top: 100px;
+    }
+
+    #socials {
+        font-size: 1.7em;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 60px;
+        line-height: 58px;
+    }
+
+    h2 {
+        font-size: 42px;
+        line-height: 46px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    #about h3 {
+        margin-bottom: 12px;
+    }
+
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    .about-img {
+        height: 225px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .about-img img {
+        object-position: 0 40%;
+    }
 }

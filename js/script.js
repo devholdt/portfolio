@@ -41,3 +41,36 @@ async function projects(url) {
 }
 
 projects(url);
+
+const logo = document.querySelector("#logo");
+const navMenu = document.querySelector(".nav-menu");
+const navToggle = document.querySelector("#navToggle");
+const menuLinks = document.querySelectorAll(".menu-link");
+
+function logoCheck() {
+  let screenWidth = window.innerWidth;
+
+  if (screenWidth < 769) {
+    logo.innerHTML = `<img src="images/MBH_Logo_NoName.png" alt="Mathias B. Herholdt logo">`;
+    navMenu.style.display = "none";
+  } else {
+    logo.innerHTML = `<img src="images/MBH_Logo.png" alt="Mathias B. Herholdt logo">`;
+    navMenu.style.display = "flex";
+  }
+}
+
+function toggleMenu() {
+  if (navMenu.style.display === "none") {
+    navMenu.style.display = "flex";
+  } else {
+    navMenu.style.display = "none";
+  }
+}
+
+window.onload = logoCheck;
+window.onresize = logoCheck;
+
+navToggle.addEventListener("click", toggleMenu);
+for (let i = 0; i < menuLinks.length; i++) {
+  menuLinks[i].addEventListener("click", toggleMenu);
+}
