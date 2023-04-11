@@ -192,7 +192,6 @@ a.btn-yellow {
 .projects-container {
     display: flex;
     gap: 20px;
-    margin-top: 40px;
     background-color: var(--dark-blue);
 }
 
