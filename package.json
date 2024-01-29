@@ -23,5 +23,9 @@
   "homepage": "https://github.com/MHerholdt94/MHerholdt94.github.io#readme",
   "dependencies": {
     "astro": "^4.2.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

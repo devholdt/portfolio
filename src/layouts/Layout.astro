@@ -4,13 +4,18 @@ import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MHerholdt94 Portfolio</title>
+  </head>
   <body>
     <Header />
-
-    <main>
-      <slot name="body" />
-    </main>
-
+    <nav>
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </nav>
     <Footer />
   </body>
 </html>
