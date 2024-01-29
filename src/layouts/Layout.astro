@@ -1,0 +1,16 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <body>
+    <Header />
+
+    <main>
+      <slot name="body" />
+    </main>
+
+    <Footer />
+  </body>
+</html>

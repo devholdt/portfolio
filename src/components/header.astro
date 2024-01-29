@@ -1,5 +1,5 @@
 ---
-// Component Script (JavaScript)
+const { greeting = "Hello! My name is", name = "Mathias" } = Astro.props;
 ---
 
-<!-- Component Template (HTML + JS Expressions) -->
+<h1>{greeting} {name}</h1>
