@@ -23,7 +23,6 @@
   "homepage": "https://github.com/MHerholdt94/MHerholdt94.github.io#readme",
   "dependencies": {
     "astro": "^4.2.6",
-    "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0"
   },
   "devDependencies": {
