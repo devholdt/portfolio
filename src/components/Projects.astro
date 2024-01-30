@@ -1,16 +1,8 @@
 ---
-const projects = [
-    "GameHub", 
-    "Tønsberg Science Museum",
-    "Time/Signature",
-    "UrSpace",
-    "Bidify"]
+import Button from "./Button.astro";
+const projects = await Astro.glob("../content/projects/*.md");
 ---
 
-<div>
-    {projects.map((project) => (
-        <button>
-            {project}
-        </button>
-    ))}
+<div style={{ display: "flex", flexDirection: "column" }}>
+    {projects.map(project => <Button>{project.frontmatter.title}</Button>)}
 </div>

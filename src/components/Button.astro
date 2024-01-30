@@ -1,0 +1,12 @@
+---
+const buttonColor = "#EEEEEE";
+---
+<button>
+    <slot />
+</button>
+
+<style define:vars={{ buttonColor }}>
+    button {
+        background-color: var(--buttonColor);
+    }
+</style>
