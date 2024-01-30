@@ -5,9 +5,7 @@ const getYear = () => new Date().getFullYear();
 const { name = "Mathias B. Herholdt", year = getYear() } = Astro.props;
 ---
 
-<footer
-  class="flex flex-col m-auto items-center gap-5 absolute inset-x-0 bottom-12"
->
+<footer class="flex flex-col items-center gap-5 mt-16">
   <p class="text-teal text-xl">{name} - {year}</p>
   <ButtonGroup />
 </footer>
