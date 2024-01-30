@@ -1,7 +1,6 @@
 ---
 import Heading from "../components/Heading.astro";
 import Projects from "../components/Projects.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/output.css";
 ---
 
@@ -11,9 +10,10 @@ import "../styles/output.css";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>MHerholdt94 Portfolio</title>
   </head>
-  <body class="bg-dark">
-    <Heading />
-    <Projects />
-    <Footer />
+  <body class="bg-dark flex flex-col min-h-screen">
+    <main class="m-5 p-14 border-4 border-teal flex-1">
+      <Heading />
+      <Projects />
+    </main>
   </body>
 </html>
