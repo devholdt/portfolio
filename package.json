@@ -1,6 +1,6 @@
 {
   "name": "mherholdt94.github.io",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Portfolio webpage for front-end developer Mathias Herholdt",
   "main": "index.js",
   "scripts": {
