@@ -3,7 +3,7 @@ import ButtonGroup from "./ButtonGroup.astro";
 const { name = "Mathias B. Herholdt", year = "2024" } = Astro.props;
 ---
 
-<footer class="text-center">
+<footer class="flex flex-col m-auto items-center gap-5">
   <p class="text-teal text-xl">{name} - {year}</p>
   <ButtonGroup />
 </footer>

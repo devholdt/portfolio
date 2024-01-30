@@ -1,15 +1,21 @@
 ---
-// import Button from "./Button.astro";
+import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 ---
 
-<div class="flex">
-  <Icon icon="github" />
-  <Icon icon="x-twitter" />
-  <!-- <Button>
-    <Icon icon="github" />
+<div class="flex gap-x-3">
+  <Button
+    styles="w-16 bg-teal p-2 rounded-full hover:bg-light transition-colors duration-100 ease-in-out m-0"
+  >
+    <Fragment slot="label">
+      <Icon icon="github" />
+    </Fragment>
   </Button>
-  <Button>
-    <Icon icon="x-twitter" />
-  </Button> -->
+  <Button
+    styles="w-16 bg-teal p-2 rounded-full hover:bg-light transition-colors duration-100 ease-in-out m-0"
+  >
+    <Fragment slot="label">
+      <Icon icon="x-twitter" />
+    </Fragment>
+  </Button>
 </div>
