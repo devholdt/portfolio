@@ -1,5 +1,6 @@
 ---
 import Heading from "../components/Heading.astro";
+import TextContent from "../components/TextContent.astro";
 import Projects from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/output.css";
@@ -12,8 +13,19 @@ import "../styles/output.css";
     <title>MHerholdt94 Portfolio</title>
   </head>
   <body class="bg-dark flex flex-col min-h-screen">
-    <main class="m-5 px-16 pt-16 pb-10 border-4 border-teal">
-      <Heading />
+    <main class="m-5 px-16 pt-16 pb-10 border-4 border-teal flex-1">
+      <Heading content="Herholdt" />
+      <TextContent
+        styles="text-white antialiased my-48 max-w-screen-sm text-2xl"
+      >
+        <p class="text-4xl">Hello!</p>
+        <p>
+          I am a front-end developer with a passion for creating beautiful
+          websites and applications with a great sense of detail. I am currently
+          studying at Noroff University, and am looking for a full time
+          position.
+        </p>
+      </TextContent>
       <Projects />
       <Footer />
     </main>

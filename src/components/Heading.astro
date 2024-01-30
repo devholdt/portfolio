@@ -1,9 +1,9 @@
 ---
-const { heading = "Herholdt" } = Astro.props;
+const { content, level = "1" } = Astro.props;
 ---
 
-<div>
-  <h1 class="text-teal text-7xl font-medium">
-    {heading}
-  </h1>
-</div>
+<astro-fragment>
+  {level === "1" && <h1 class="text-teal text-8xl font-medium">{content}</h1>}
+  {level === "2" && <h2 class="text-teal text-7xl font-medium">{content}</h2>}
+  {level === "3" && <h3 class="text-teal text-5xl font-medium">{content}</h3>}
+</astro-fragment>

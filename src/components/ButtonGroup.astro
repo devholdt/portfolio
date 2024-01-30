@@ -1,19 +1,17 @@
 ---
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
+const iconStyles =
+  "w-16 bg-light p-2 rounded-full hover:bg-teal transition-colors duration-100 ease-in-out";
 ---
 
 <div class="flex gap-x-3">
-  <Button
-    styles="w-16 bg-teal p-2 rounded-full hover:bg-light transition-colors duration-100 ease-in-out m-0"
-  >
+  <Button classList={iconStyles}>
     <Fragment slot="label">
       <Icon icon="github" />
     </Fragment>
   </Button>
-  <Button
-    styles="w-16 bg-teal p-2 rounded-full hover:bg-light transition-colors duration-100 ease-in-out m-0"
-  >
+  <Button classList={iconStyles}>
     <Fragment slot="label">
       <Icon icon="x-twitter" />
     </Fragment>

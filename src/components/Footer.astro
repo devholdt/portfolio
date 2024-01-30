@@ -1,9 +1,13 @@
 ---
 import ButtonGroup from "./ButtonGroup.astro";
-const { name = "Mathias B. Herholdt", year = "2024" } = Astro.props;
+
+const getYear = () => new Date().getFullYear();
+const { name = "Mathias B. Herholdt", year = getYear() } = Astro.props;
 ---
 
-<footer class="flex flex-col m-auto items-center gap-5">
+<footer
+  class="flex flex-col m-auto items-center gap-5 absolute inset-x-0 bottom-12"
+>
   <p class="text-teal text-xl">{name} - {year}</p>
   <ButtonGroup />
 </footer>

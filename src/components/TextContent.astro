@@ -1,0 +1,9 @@
+---
+const { styles = "" } = Astro.props;
+---
+
+<astro:fragment>
+  <div class={styles}>
+    <slot />
+  </div>
+</astro:fragment>
