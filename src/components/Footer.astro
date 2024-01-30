@@ -1,0 +1,9 @@
+---
+import ButtonGroup from "./ButtonGroup.astro";
+const { name = "Mathias B. Herholdt", year = "2024" } = Astro.props;
+---
+
+<footer class="text-center">
+  <p class="text-teal text-xl">{name} - {year}</p>
+  <ButtonGroup />
+</footer>

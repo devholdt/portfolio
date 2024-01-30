@@ -1,9 +1,11 @@
 ---
-
+let { styles = "" } = Astro.props;
+const defaultButtonStyle = styles
+  ? ""
+  : "my-1 p-0 bg-transparent self-start text-white text-xl font-semibold hover:text-teal transition-colors duration-100 ease-in-out";
+const buttonStyle = `${defaultButtonStyle} ${styles}`;
 ---
 
-<button
-  class="my-1 p-0 bg-transparent text-white self-start text-xl font-semibold hover:text-teal"
->
-  <slot />
+<button class={`${buttonStyle}`}>
+  <slot name="label" />
 </button>

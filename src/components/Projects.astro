@@ -4,5 +4,11 @@ const projects = await Astro.glob("../content/projects/*.md");
 ---
 
 <div class="flex flex-col my-5">
-  {projects.map((project) => <Button>{project.frontmatter.title}</Button>)}
+  {
+    projects.map((project) => (
+      <Button>
+        <Fragment slot="label">{project.frontmatter.title}</Fragment>
+      </Button>
+    ))
+  }
 </div>
