@@ -1,5 +1,5 @@
 ---
-import ButtonGroup from "./ButtonGroup.astro";
+import IconGroup from "./IconGroup.astro";
 
 const getYear = () => new Date().getFullYear();
 const { name = "Mathias B. Herholdt", year = getYear() } = Astro.props;
@@ -7,5 +7,5 @@ const { name = "Mathias B. Herholdt", year = getYear() } = Astro.props;
 
 <footer class="flex flex-col items-center gap-5 mt-16">
   <p class="text-teal text-xl">{name} - {year}</p>
-  <ButtonGroup />
+  <IconGroup />
 </footer>
