@@ -1,6 +1,7 @@
 ---
-title: Time/Signature
-author: Mathias B. Herholdt
+title: "Time/Signature"
+slug: timesignature
+url: "/timesignature"
 ---
 
 # Time/Signature

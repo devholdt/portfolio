@@ -1,6 +1,7 @@
 ---
-title: Bidify
-author: Mathias B. Herholdt
+title: "Bidify"
+slug: bidify
+url: "/bidify"
 ---
 
 # Bidify

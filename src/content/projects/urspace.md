@@ -1,6 +1,7 @@
 ---
-title: UrSpace
-author: Mathias B. Herholdt
+title: "UrSpace"
+slug: urspace
+url: "/urspace"
 ---
 
 # UrSpace

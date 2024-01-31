@@ -1,6 +1,7 @@
 ---
-title: Tønsberg Science Museum
-author: Mathias B. Herholdt
+title: "Tønsberg Science Museum"
+slug: tønsberg-science-museum
+url: "/tønsberg-science-museum"
 ---
 
 # Tønsberg Science Museum

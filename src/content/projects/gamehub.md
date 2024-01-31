@@ -1,6 +1,7 @@
 ---
-title: GameHub
-author: Mathias B. Herholdt
+title: "GameHub"
+slug: gamehub
+url: "/gamehub"
 ---
 
 # GameHub

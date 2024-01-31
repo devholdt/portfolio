@@ -180,35 +180,35 @@ declare module 'astro:content' {
   slug: "bidify";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "gamehub.md": {
 	id: "gamehub.md";
   slug: "gamehub";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "sciencemuseum.md": {
 	id: "sciencemuseum.md";
-  slug: "sciencemuseum";
+  slug: "tønsberg-science-museum";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "timesignature.md": {
 	id: "timesignature.md";
   slug: "timesignature";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 "urspace.md": {
 	id: "urspace.md";
   slug: "urspace";
   body: string;
   collection: "projects";
-  data: any
+  data: InferEntrySchema<"projects">
 } & { render(): Render[".md"] };
 };
 
@@ -220,5 +220,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("./..\src\content\config.js");
 }

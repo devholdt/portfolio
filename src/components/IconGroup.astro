@@ -18,10 +18,17 @@ const iconStyles =
   </Button>
 </div>
 <script>
-  document.querySelector("#iconGithub").addEventListener("click", () => {
-    window.open("https://github.com/MHerholdt94", "_blank");
-  });
-  document.querySelector("#iconTwitter").addEventListener("click", () => {
-    window.open("https://twitter.com/Harboldtt", "_blank");
-  });
+  const githubIcon = document.querySelector("#iconGithub");
+  if (githubIcon) {
+    githubIcon.addEventListener("click", () => {
+      window.open("https://github.com/MHerholdt94", "_blank");
+    });
+  }
+
+  const twitterIcon = document.querySelector("#iconTwitter");
+  if (twitterIcon) {
+    twitterIcon.addEventListener("click", () => {
+      window.open("https://twitter.com/Harboldtt", "_blank");
+    });
+  }
 </script>
