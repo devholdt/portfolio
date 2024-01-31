@@ -1,0 +1,69 @@
+---
+import Heading from "../components/Heading.astro";
+import TextContent from "../components/TextContent.astro";
+import Projects from "../components/Projects.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/output.css";
+
+export async function getStaticPaths() {
+  const projects = await Astro.glob("../content/projects/*.md");
+  const pages = [
+    {
+      slug: undefined,
+      title: "Portfolio",
+      heading: "Herholdt",
+      text: `Hello! I am a front-end developer with a passion for creating beautiful
+            websites and applications with a great sense of detail. I am currently
+            studying at Noroff University, and I am working on a few personal
+            projects on the side.`,
+    },
+    {
+      slug: "contact",
+      title: "Contact",
+      heading: "Contact",
+      text: "Contact me here!",
+    },
+    {
+      slug: `projects/${projects}`,
+      title: { projects },
+      heading: { projects },
+      text: "This is one of my projects!",
+    },
+  ];
+  return pages.map(({ slug, title, heading, text }) => {
+    return {
+      params: { slug },
+      props: { title, heading, text },
+    };
+  });
+}
+
+const { title, heading, text } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MHerholdt94 | {title}</title>
+  </head>
+  <body
+    class="bg-dark flex flex-col min-h-screen border-4 border-teal m-5 px-16 pt-16 pb-10"
+  >
+    <main class="flex-1">
+      <Heading content={heading} />
+      <TextContent
+        styles="text-white antialiased my-48 max-w-screen-sm text-2xl"
+      >
+        {text}
+      </TextContent>
+    </main>
+    <h1>{title}</h1>
+  </body>
+</html>
+
+<!-- ---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout /> -->

@@ -25,6 +25,8 @@
     "astro": "^4.2.6"
   },
   "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.13",
     "concurrently": "^8.2.2",
     "node-html-parser": "^6.1.12",
     "prettier": "^3.2.4",
