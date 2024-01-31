@@ -6,14 +6,22 @@ const iconStyles =
 ---
 
 <div class="flex gap-x-3">
-  <Button classList={iconStyles}>
+  <Button id="iconGithub" classList={iconStyles}>
     <Fragment slot="label">
       <Icon icon="github" />
     </Fragment>
   </Button>
-  <Button classList={iconStyles}>
+  <Button id="iconTwitter" classList={iconStyles}>
     <Fragment slot="label">
       <Icon icon="x-twitter" />
     </Fragment>
   </Button>
 </div>
+<script>
+  document.querySelector("#iconGithub").addEventListener("click", () => {
+    window.open("https://github.com/MHerholdt94", "_blank");
+  });
+  document.querySelector("#iconTwitter").addEventListener("click", () => {
+    window.open("https://twitter.com/Harboldtt", "_blank");
+  });
+</script>
