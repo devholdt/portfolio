@@ -191,7 +191,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "sciencemuseum.md": {
 	id: "sciencemuseum.md";
-  slug: "tønsberg-science-museum";
+  slug: "sciencemuseum";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
