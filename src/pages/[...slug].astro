@@ -1,44 +1,77 @@
 ---
+// --- Server (SSR) Mode ---
 import Heading from "../components/Heading.astro";
 import TextContent from "../components/TextContent.astro";
 import Projects from "../components/Projects.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/output.css";
 
-export async function getStaticPaths() {
-  const projects = await Astro.glob("../content/projects/*.md");
-  const pages = [
-    {
-      slug: undefined,
-      title: "Portfolio",
-      heading: "Herholdt",
-      text: `Hello! I am a front-end developer with a passion for creating beautiful
+const projects = await Astro.glob("../content/projects/*.md");
+const pages = [
+  {
+    slug: undefined,
+    title: "Portfolio",
+    heading: "Herholdt",
+    text: `Hello! I am a front-end developer with a passion for creating quality
             websites and applications with a great sense of detail. I am currently
             studying at Noroff University, and I am working on a few personal
             projects on the side.`,
-    },
-    {
-      slug: "contact",
-      title: "Contact",
-      heading: "Contact",
-      text: "Contact me here!",
-    },
-    {
-      slug: `projects/${projects}`,
-      title: { projects },
-      heading: { projects },
-      text: "This is one of my projects!",
-    },
-  ];
-  return pages.map(({ slug, title, heading, text }) => {
-    return {
-      params: { slug },
-      props: { title, heading, text },
-    };
-  });
-}
+  },
+  {
+    slug: "contact",
+    title: "Contact",
+    heading: "Contact",
+    text: "Contact me here!",
+  },
+  {
+    slug: `projects/${projects}`,
+    title: { projects },
+    heading: { projects },
+    text: "This is one of my projects!",
+  },
+];
 
-const { title, heading, text } = Astro.props;
+const { slug } = Astro.params;
+const page = pages.find((page) => page.slug === slug);
+if (!page) return Astro.redirect("/404");
+const { title, heading, text } = page;
+
+// --- Static (SSG) Mode ---
+// export async function getStaticPaths() {
+//   const projects = await Astro.glob("../content/projects/*.md");
+//   const pages = [
+//     {
+//       slug: undefined,
+//       title: "Portfolio",
+//       heading: "Herholdt",
+//       text: `Hello! I am a front-end developer with a passion for creating quality
+//             websites and applications with a great sense of detail. I am currently
+//             studying at Noroff University, and I am working on a few personal
+//             projects on the side.`,
+//     },
+//     {
+//       slug: "contact",
+//       title: "Contact",
+//       heading: "Contact",
+//       text: "Contact me here!",
+//     },
+//     {
+//       slug: `projects/${projects}`,
+//       title: { projects },
+//       heading: { projects },
+//       text: "This is one of my projects!",
+//     },
+//   ];
+
+//     return pages.map(({ slug, title, heading, text }) => {
+//       return {
+//         params: { slug },
+//         props: { title, heading, text },
+//       };
+//     });
+// }
+
+// const { title, heading, text } = Astro.props;
 ---
 
 <html lang="en">
@@ -57,8 +90,9 @@ const { title, heading, text } = Astro.props;
       >
         {text}
       </TextContent>
+      <Projects />
     </main>
-    <h1>{title}</h1>
+    <Footer />
   </body>
 </html>
 
