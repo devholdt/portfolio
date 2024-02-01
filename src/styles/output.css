@@ -805,10 +805,10 @@ video {
   --gray-999-basis: 0, 0%, 100%;
   --gray-999_40: hsla(var(--gray-999-basis), 0.4);
   --gray-999: #ffffff;
-  --accent-light: #00deea;
-  --accent-regular: #00ADB5;
-  --accent-dark: #006065;
-  --accent-overlay: #00acb54b;
+  --accent-light: #00838A;
+  --accent-regular: #006F75;
+  --accent-dark: #005c61;
+  --accent-overlay: #005c6147;
   --accent-subtle-overlay: var(--accent-overlay);
   --accent-text-over: var(--gray-999);
   --link-color: var(--accent-regular);
@@ -873,7 +873,7 @@ video {
   --accent-light: #00deea;
   --accent-regular: #00ADB5;
   --accent-dark: #006065;
-  --accent-overlay: #00acb54b;
+  --accent-overlay: #00747aa1;
   --accent-subtle-overlay: var(--accent-overlay);
   --accent-text-over: var(--gray-999);
   --link-color: var(--accent-regular);
