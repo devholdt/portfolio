@@ -10,9 +10,6 @@ interface Props {
   entry: CollectionEntry<"projects">;
 }
 
-// This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
-// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
   return projects.map((entry) => ({
@@ -29,7 +26,7 @@ const { Content } = await entry.render();
   <div class="stack gap-20">
     <div class="stack gap-15">
       <header>
-        <div class="wrapper stack gap-2">
+        <div class="wrapper stack gap-2 pb-10">
           <div class="flex justify-between">
             <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
             <div class="theme-toggle">
@@ -37,8 +34,10 @@ const { Content } = await entry.render();
             </div>
           </div>
           <Hero title={entry.data.title}>
-            <div class="details">
-              <p class="description">{entry.data.description}</p>
+            <div class="p-2">
+              <p class="description text-lg md:text-md">
+                {entry.data.description}
+              </p>
             </div>
           </Hero>
         </div>
@@ -61,26 +60,11 @@ const { Content } = await entry.render();
 
 <style>
   header {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--gray-800);
-  }
-
-  .details {
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
+    border-bottom: 1px solid var(--gray-400);
   }
 
   .description {
-    font-size: var(--text-lg);
+    /* font-size: var(--text-lg); */
     max-width: 54ch;
   }
 
@@ -136,11 +120,6 @@ const { Content } = await entry.render();
     .back-link {
       display: block;
       align-self: flex-start;
-    }
-
-    .details {
-      flex-direction: row;
-      gap: 2.5rem;
     }
 
     .content :global(blockquote) {

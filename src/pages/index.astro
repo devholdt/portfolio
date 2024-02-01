@@ -10,15 +10,15 @@ const projects = await getCollection("projects");
 
 <BaseLayout>
   <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack gap-8 lg:gap-20">
+    <div class="wrapper stack">
+      <div class="theme-toggle flex justify-end w-full mb-10">
+        <ThemeToggle />
+      </div>
       <header class="hero flex flex-col">
         <Hero
           title="Hello, my name is Mathias B. Herholdt"
           tagline="I am a front-end development student at Noroff University"
         />
-        <div class="theme-toggle flex justify-end w-full mb-10">
-          <ThemeToggle />
-        </div>
       </header>
     </div>
 
@@ -44,5 +44,9 @@ const projects = await getCollection("projects");
 <style>
   .section-header h3 {
     color: var(--gray-0);
+  }
+
+  .hero {
+    max-width: 768px;
   }
 </style>
