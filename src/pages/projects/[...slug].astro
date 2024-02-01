@@ -2,11 +2,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
-import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
-import Pill from "../../components/Pill.astro";
 
 interface Props {
   entry: CollectionEntry<"projects">;
@@ -33,13 +30,10 @@ const { Content } = await entry.render();
       <header>
         <div class="wrapper stack gap-2">
           <a class="back-link" href="/projects/"
-            ><Icon icon="arrow-left" /> projects</a
+            ><Icon icon="arrow-left" />Back</a
           >
           <Hero title={entry.data.title} align="start">
             <div class="details">
-              <div class="tags">
-                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-              </div>
               <p class="description">{entry.data.description}</p>
             </div>
           </Hero>
@@ -58,7 +52,6 @@ const { Content } = await entry.render();
         </div>
       </main>
     </div>
-    <ContactCTA />
   </div>
 </BaseLayout>
 
@@ -66,10 +59,6 @@ const { Content } = await entry.render();
   header {
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--gray-800);
-  }
-
-  .back-link {
-    display: none;
   }
 
   .details {
@@ -109,10 +98,10 @@ const { Content } = await entry.render();
   }
 
   .content :global(img) {
-    border-radius: 1.5rem;
+    /* border-radius: 0.3rem; */
     box-shadow: var(--shadow-sm);
     background: var(--gradient-subtle);
-    border: 1px solid var(--gray-800);
+    border: 1px solid var(--gray-200);
   }
 
   .content :global(blockquote) {
