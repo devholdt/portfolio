@@ -8,9 +8,13 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<a class="card" href={`/projects/${slug}`}>
-  <span class="title">{data.title}</span>
+<a
+  class="card grid shadow-md text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
+  href={`/projects/${slug}`}
+>
+  <span class="title z-10 m-2 px-4 py-2 shadow-md">{data.title}</span>
   <img
+    class="w-full h-full object-cover"
     src={data.img}
     alt={data.img_alt || ""}
     loading="lazy"
@@ -20,18 +24,10 @@ const { data, slug } = Astro.props.project;
 
 <style>
   .card {
-    display: grid;
     grid-template: auto 1fr / auto 1fr;
-    height: 11rem;
     background: var(--gradient-subtle);
     border: 1px solid var(--gray-800);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
     font-family: var(--font-brand);
-    font-size: var(--text-lg);
-    font-weight: 500;
-    transition: 0.2s ease-in-out;
   }
 
   .card:hover {
@@ -41,19 +37,11 @@ const { data, slug } = Astro.props.project;
 
   .title {
     grid-area: 1 / 1 / 2 / 2;
-    z-index: 1;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
     background: var(--gray-999);
-    color: var(--gray-200);
-    box-shadow: var(--shadow-sm);
+    color: var(--gray-50);
   }
 
   img {
     grid-area: 1 / 1 / 3 / 3;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 0% 16%;
   }
 </style>

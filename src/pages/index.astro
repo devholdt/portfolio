@@ -1,15 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-// Component Imports
 import Hero from "../components/Hero.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 
-// Content Fetching: List four most recent work projects
 const projects = await getCollection("projects");
 ---
 
@@ -32,18 +27,15 @@ const projects = await getCollection("projects");
         <div class="section-header stack mb-4 text-center md:text-left">
           <h3 class="text-3xl md:text-5xl">Projects</h3>
         </div>
-
-        <div class="gallery">
-          <ul class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </ul>
-        </div>
+        <ul class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {
+            projects.map((project) => (
+              <li>
+                <PortfolioPreview project={project} />
+              </li>
+            ))
+          }
+        </ul>
       </section>
     </main>
   </div>
