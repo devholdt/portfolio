@@ -4,6 +4,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
+import ThemeToggle from "../../components/ThemeToggle.astro";
 
 interface Props {
   entry: CollectionEntry<"projects">;
@@ -29,7 +30,12 @@ const { Content } = await entry.render();
     <div class="stack gap-15">
       <header>
         <div class="wrapper stack gap-2">
-          <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
+          <div class="flex justify-between">
+            <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
+            <div class="theme-toggle">
+              <ThemeToggle />
+            </div>
+          </div>
           <Hero title={entry.data.title}>
             <div class="details">
               <p class="description">{entry.data.description}</p>

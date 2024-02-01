@@ -18,7 +18,7 @@
 	--gray-900: #c8d6f0;
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #ffffff;
+	--gray-999: #eeeeee;
 
 	--accent-light: #00838A;
 	--accent-regular: #006F75;
