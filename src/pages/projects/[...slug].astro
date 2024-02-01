@@ -30,7 +30,7 @@ const { Content } = await entry.render();
       <header>
         <div class="wrapper stack gap-2">
           <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
-          <Hero title={entry.data.title} align="start">
+          <Hero title={entry.data.title}>
             <div class="details">
               <p class="description">{entry.data.description}</p>
             </div>
@@ -126,7 +126,7 @@ const { Content } = await entry.render();
     text-decoration-color: currentColor;
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: 768px) {
     .back-link {
       display: block;
       align-self: flex-start;

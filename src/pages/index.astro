@@ -21,7 +21,6 @@ const projects = await getCollection("projects");
         <Hero
           title="Hello, my name is Mathias B. Herholdt"
           tagline="I am a front-end development student at Noroff University"
-          align="start"
         />
         <div class="theme-toggle flex justify-end w-full mb-10">
           <ThemeToggle />
@@ -98,7 +97,7 @@ const projects = await getCollection("projects");
     font-size: var(--text-2xl);
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: 768px) {
     .section {
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas: "header header header header" "gallery gallery gallery gallery";
