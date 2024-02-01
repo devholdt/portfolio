@@ -1,6 +1,5 @@
 ---
 import MainHead from "../components/MainHead.astro";
-import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
@@ -17,8 +16,7 @@ const { title, description } = Astro.props;
   </head>
   <body>
     <div class="stack backgrounds">
-      <Nav />
-      <main class="border-8 border-teal mx-6 mb-6 pt-14 pb-8">
+      <main class="border-8 border-teal m-6 pt-5 pb-8">
         <slot />
       </main>
       <Footer />

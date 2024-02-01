@@ -5,11 +5,10 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 
 // Content Fetching: List four most recent work projects
 const projects = await getCollection("projects");
@@ -24,6 +23,9 @@ const projects = await getCollection("projects");
           tagline="I am a front-end development student at Noroff University"
           align="start"
         />
+        <div class="theme-toggle flex justify-end w-full mb-10">
+          <ThemeToggle />
+        </div>
       </header>
     </div>
 
@@ -54,29 +56,6 @@ const projects = await getCollection("projects");
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-  }
-
-  .hero img {
-    aspect-ratio: 5 / 4;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  @media (min-width: 50em) {
-    .hero {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
-      padding-inline: 2.5rem;
-      gap: 3.75rem;
-    }
-    .hero img {
-      aspect-ratio: 3 / 4;
-      border-radius: 4.5rem;
-      object-fit: cover;
-    }
   }
 
   .section {
