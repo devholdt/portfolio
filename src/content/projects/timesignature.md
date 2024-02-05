@@ -1,13 +1,15 @@
 ---
 title: "Time/Signature"
-img: /assets/timesignature/timesignature_home.jpg
-img_alt: timesignature front page
+img_main: /assets/timesignature/timesignature_home.jpg
+img_main_alt: timesignature front page
+img_secondary: /assets/timesignature/timesignature_bloglist.jpg
+img_secondary_alt: timesignature bloglist page
 description: |
   A website with blog posts about all things drumming. The blog posts is fetched using WordPress REST API.
 tags:
-  - website
-  - drums
-  - project
+  - Website
+  - REST API
+  - Blog
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.

@@ -45,8 +45,11 @@ const { Content } = await entry.render();
       <main class="wrapper">
         <div class="stack gap-10 content">
           {
-            entry.data.img && (
-              <img src={entry.data.img} alt={entry.data.img_alt || ""} />
+            entry.data.img_main && (
+              <img
+                src={entry.data.img_main}
+                alt={entry.data.img_main_alt || ""}
+              />
             )
           }
           <div class="content">
@@ -73,9 +76,11 @@ const { Content } = await entry.render();
   }
 
   .content :global(img) {
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     background: var(--gradient-subtle);
-    border: 1px solid var(--gray-200);
+    max-height: 400px;
+    object-fit: cover;
+    object-position: top;
   }
 
   .back-link,
