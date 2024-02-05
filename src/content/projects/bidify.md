@@ -12,4 +12,15 @@ tags:
   - Auction
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+<p class="text-2xl">
+  Bidify is an auction website that allows users to view, create, and bid on listings. This project was part of the Semester Project 2 course at Noroff University, utilizing the Noroff API for its functionality.
+</p>
+
+&nbsp;
+
+**Features**
+
+- **User Authentication**: Users can register, login, and manage their profiles.
+- **Listing Management**: Users can create, edit, and delete their own listings.
+- **Bidding System**: Users can place bids on listings and view bid history.
+- **Responsive Design**: The website is designed to be responsive and user-friendly across various devices.
