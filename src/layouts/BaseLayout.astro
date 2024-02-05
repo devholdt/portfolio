@@ -15,8 +15,8 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
   </head>
   <body>
-    <div class="stack">
-      <main class="border-8 border-teal m-6 pt-5 pb-8">
+    <div>
+      <main class="border-8 border-teal m-6 pt-5 pb-8 flex flex-col gap-10">
         <slot />
       </main>
       <Footer />

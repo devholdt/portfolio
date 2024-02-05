@@ -9,10 +9,10 @@ const { tagline, title } = Astro.props;
 
 <div
   class:list={[
-    "hero stack gap-4 text-center text-md flex order-2 md:order-1 md:text-left sm:text-lg md:text-2xl",
+    "hero flex flex-col gap-4 text-md md:order-1 md:text-left sm:text-lg md:text-2xl",
   ]}
 >
-  <div class="stack gap-2">
+  <div>
     <h1 class="title text-4xl sm:text-5xl md:text-7xl">{title}</h1>
     {tagline && <p class="tagline">{tagline}</p>}
   </div>
@@ -20,6 +20,10 @@ const { tagline, title } = Astro.props;
 </div>
 
 <style>
+  .hero {
+    max-width: 768px;
+  }
+
   .title {
     color: var(--gray-0);
   }

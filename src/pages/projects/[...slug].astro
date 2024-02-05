@@ -23,42 +23,49 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-  <div class="stack gap-20">
-    <div class="stack gap-15">
-      <header>
-        <div class="wrapper stack gap-2 pb-10">
-          <div class="flex justify-between">
-            <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
-            <div class="theme-toggle">
-              <ThemeToggle />
-            </div>
-          </div>
-          <Hero title={entry.data.title}>
-            <div class="p-2">
-              <p class="description text-lg md:text-md">
-                {entry.data.description}
-              </p>
-            </div>
-          </Hero>
+  <header>
+    <div class="wrapper gap-2 pb-10">
+      <div class="flex justify-between">
+        <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
+        <div class="theme-toggle">
+          <ThemeToggle />
         </div>
-      </header>
-      <main class="wrapper">
-        <div class="stack gap-10 content">
-          {
-            entry.data.img_main && (
-              <img
-                src={entry.data.img_main}
-                alt={entry.data.img_main_alt || ""}
-              />
-            )
-          }
-          <div class="content">
-            <Content />
-          </div>
+      </div>
+      <Hero title={entry.data.title}>
+        <div class="p-2">
+          <p class="description text-lg md:text-md">
+            {entry.data.description}
+          </p>
         </div>
-      </main>
+      </Hero>
     </div>
-  </div>
+  </header>
+  <main class="wrapper">
+    <div class="content flex gap-20">
+      <div class="content-text">
+        <Content />
+      </div>
+
+      <div class="content-img">
+        {
+          entry.data.img_secondary && (
+            <img
+              src={entry.data.img_secondary}
+              alt={entry.data.img_secondary_alt || ""}
+            />
+          )
+        }
+        {
+          entry.data.img_main && (
+            <img
+              src={entry.data.img_main}
+              alt={entry.data.img_main_alt || ""}
+            />
+          )
+        }
+      </div>
+    </div>
+  </main>
 </BaseLayout>
 
 <style>
@@ -70,17 +77,29 @@ const { Content } = await entry.render();
     max-width: 54ch;
   }
 
-  .content {
-    max-width: 54ch;
-    margin-inline: auto;
+  .content-img {
+    height: 30.125em;
+    padding-right: 5em;
   }
 
-  .content :global(img) {
+  .content-img img {
     box-shadow: var(--shadow-md);
-    background: var(--gradient-subtle);
-    max-height: 400px;
+    border: 1px solid var(--gray-600);
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     object-position: top;
+    border-radius: 0.5rem;
+  }
+
+  .content-img img:last-of-type {
+    position: relative;
+    bottom: 20rem;
+    left: 5rem;
+  }
+
+  .content-text {
+    max-width: 60ch;
   }
 
   .back-link,

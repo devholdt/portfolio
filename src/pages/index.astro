@@ -9,8 +9,8 @@ const projects = await getCollection("projects");
 ---
 
 <BaseLayout>
-  <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack">
+  <div class="gap-20 lg:gap-48">
+    <div class="wrapper">
       <div class="theme-toggle flex justify-end w-full mb-10">
         <ThemeToggle />
       </div>
@@ -22,9 +22,9 @@ const projects = await getCollection("projects");
       </header>
     </div>
 
-    <main class="wrapper stack gap-20 lg:gap-48">
+    <main class="wrapper gap-20 lg:gap-48">
       <section class="section with-background with-cta">
-        <div class="section-header stack mb-4 text-center md:text-left">
+        <div class="section-header mb-4 text-center md:text-left">
           <h3 class="text-3xl md:text-5xl">Projects</h3>
         </div>
         <ul class="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
@@ -44,9 +44,5 @@ const projects = await getCollection("projects");
 <style>
   .section-header h3 {
     color: var(--gray-0);
-  }
-
-  .hero {
-    max-width: 768px;
   }
 </style>
