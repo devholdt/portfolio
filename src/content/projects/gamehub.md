@@ -1,7 +1,7 @@
 ---
 title: GameHub
-img: /assets/GameHub_Logo.png
-img_alt: gamehub logo
+img: /assets/gamehub/gamehub_home.jpg
+img_alt: gamehub front page
 description: |
   A website for a fictional video game retailer where users can buy and sell games as well as read the latest news from the world of gaming.
 tags:

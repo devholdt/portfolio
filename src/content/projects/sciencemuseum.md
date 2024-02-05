@@ -1,7 +1,7 @@
 ---
 title: "Tønsberg Science Museum"
-img: /assets/tbgsciencemuseum.jpg
-img_alt: tønsberg science museum frontpage
+img: /assets/sciencemuseum/sciencemuseum_home.jpg
+img_alt: tønsberg science museum front page
 description: |
   A website for a fictional science museum based in my home town. The site is catered to inquisitive, curious children and their families.
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "Time/Signature"
-img: /assets/timesignature_home.png
-img_alt: timesignature frontpage
+img: /assets/timesignature/timesignature_home.jpg
+img_alt: timesignature front page
 description: |
   A website with blog posts about all things drumming. The blog posts is fetched using WordPress REST API.
 tags:
