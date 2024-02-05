@@ -23,12 +23,6 @@ const { href } = Astro.props;
     white-space: nowrap;
   }
 
-  @media (min-width: 320px) {
-    a {
-      font-size: var(--text-lg);
-    }
-  }
-
   /* Overlay for hover effects. */
   a::after {
     content: "";
@@ -42,12 +36,5 @@ const { href } = Astro.props;
   a:focus::after,
   a:hover::after {
     background-color: hsla(var(--gray-999-basis), 0.3);
-  }
-
-  @media (min-width: 768px) {
-    a {
-      padding: 1rem;
-      font-size: var(--text-lg);
-    }
   }
 </style>

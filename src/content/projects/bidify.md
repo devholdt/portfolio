@@ -18,7 +18,15 @@ tags:
 
 &nbsp;
 
-**Features**
+---
+
+&nbsp;
+
+<p class="text-lg">
+  Features
+</p>
+
+&nbsp;
 
 - **User Authentication**: Users can register, login, and manage their profiles.
 - **Listing Management**: Users can create, edit, and delete their own listings.
