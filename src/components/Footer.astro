@@ -4,7 +4,9 @@ import CallToAction from "./CallToAction.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-grey px-8 py-6 sm:px-16 sm:py-12">
+<footer
+  class="bg-gray-40 dark:bg-graydark-40 text-gray-0 dark:text-graydark-0 border-t border-grey px-8 py-6 sm:px-16 sm:py-12"
+>
   <div class="flex flex-col justify-between">
     <div class="text-left">
       <h2>Contact</h2>
@@ -23,29 +25,37 @@ const currentYear = new Date().getFullYear();
     <div class="hidden sm:block">
       <h3 class="text-sm">You can also find me here</h3>
       <p>
-        <a class="text-sm" href="https://github.com/mherholdt94"> GitHub</a>
+        <a
+          class="text-sm text-gray-400 dark:text-graydark-400"
+          href="https://github.com/mherholdt94"
+        >
+          GitHub</a
+        >
       </p>
       <p>
-        <a class="text-sm" href="https://twitter.com/harboldtt"> Twitter</a>
+        <a
+          class="text-sm text-gray-400 dark:text-graydark-400"
+          href="https://twitter.com/harboldtt"
+        >
+          Twitter</a
+        >
       </p>
     </div>
     <div class="group text-nowrap mt-auto">
-      <p>&copy; {currentYear} Mathias B. Herholdt</p>
+      <p>&copy;{currentYear} Mathias B. Herholdt</p>
     </div>
   </div>
 </footer>
 
 <style>
   footer {
-    background-color: var(--gray-999_40);
     box-shadow: var(--shadow-sm);
   }
 
   footer a {
-    color: var(--gray-400);
     text-decoration: 1px solid underline transparent;
     text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
+    transition: text-decoration-color 0.2s ease-in-out;
   }
 
   footer a:hover,

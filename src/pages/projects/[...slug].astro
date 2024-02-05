@@ -22,31 +22,42 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<BaseLayout title={entry.data.title} description={entry.data.description}>
-  <header>
-    <div class="container px-4 gap-2 pb-10">
-      <div class="flex justify-between">
-        <a class="back-link" href="/"><Icon icon="arrow-left" />Back</a>
-        <div class="theme-toggle">
-          <ThemeToggle />
-        </div>
+<BaseLayout
+  title={`Mathias B. Herholdt | ${entry.data.title}`}
+  description={entry.data.description}
+>
+  <header
+    class="container mx-auto px-4 gap-2 pb-10 border-b border-gray-400 dark:border-graydark-400"
+  >
+    <div class="flex justify-between">
+      <a class="back-link p-2 text-gray-100 dark:text-graydark-100" href="/"
+        ><Icon icon="arrow-left" />Back</a
+      >
+      <div class="theme-toggle">
+        <ThemeToggle />
       </div>
-      <Hero title={entry.data.title}>
-        <div class="p-2">
-          <p class="description text-lg md:text-md">
-            {entry.data.description}
-          </p>
-        </div>
-      </Hero>
     </div>
+    <Hero title={entry.data.title}>
+      <div class="p-2">
+        <p
+          class="description text-gray-0 dark:text-graydark-0 text-lg md:text-md"
+        >
+          {entry.data.description}
+        </p>
+      </div>
+    </Hero>
   </header>
-  <main class="container px-4">
-    <div class="content flex flex-wrap gap-20">
-      <div class="content-text">
+  <div class="container mx-auto px-4">
+    <div class="content flex flex-wrap gap-20 text-gray-0 dark:text-graydark-0">
+      <div class="max-w-prose">
         <Content />
+        <div class="flex gap-4 mt-8">
+          <button class="border w-24 h-10 rounded-sm"> Repo </button>
+          <button class="border w-24 h-10 rounded-sm"> Live </button>
+        </div>
       </div>
 
-      <div class="content-img flex gap-6">
+      <div class="flex gap-6">
         <div>
           {
             entry.data.img_main && (
@@ -69,37 +80,31 @@ const { Content } = await entry.render();
         </div>
       </div>
     </div>
-  </main>
+  </div>
+
+  <div class="flex gap-6"></div>
 </BaseLayout>
 
 <style>
-  header {
-    border-bottom: 1px solid var(--gray-400);
-  }
-
   .description {
     max-width: 54ch;
   }
 
-  .content-img img {
+  .content img {
     box-shadow: var(--shadow-md);
-    width: 400px;
+    width: 380px;
     height: 400px;
     object-fit: cover;
     object-position: top;
     border-radius: 0.5rem;
   }
 
-  .content-text {
-    max-width: 60ch;
-  }
-
   .back-link,
   .content :global(a) {
-    color: var(--gray-100);
+    /* color: var(--gray-100); */
     text-decoration: 1px solid underline transparent;
     text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
+    transition: text-decoration-color 0.2s ease-in-out;
   }
 
   .back-link:hover,

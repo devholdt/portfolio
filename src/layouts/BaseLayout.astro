@@ -14,18 +14,32 @@ const { title, description } = Astro.props;
   <head>
     <MainHead title={title} description={description} />
   </head>
-  <body>
+  <body
+    class="text-white dark:text-graydark-50 bg-white dark:bg-graydark-999 antialiased"
+  >
     <div>
-      <main class="border-8 border-teal m-6 pt-5 pb-8 flex flex-col gap-10">
+      <main
+        class="border-8 border-primary-dark m-6 pt-5 pb-8 flex flex-col gap-10"
+      >
         <slot />
       </main>
       <Footer />
     </div>
 
     <script>
-      addEventListener("load", () =>
-        document.documentElement.classList.add("loaded"),
-      );
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      localStorage.theme = "light";
+      localStorage.theme = "dark";
+      localStorage.removeItem("theme");
     </script>
 
     <style>

@@ -6,7 +6,10 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a class="flex text-center gap-1 rounded-lg" href={href}><slot /></a>
+<a
+  class="flex shadow-light dark:shadow-dark text-gray-999 bg-primary-regular dark:bg-primarydark-regular dark:text-graydark-999 text-center gap-1 rounded-lg"
+  href={href}><slot /></a
+>
 
 <style>
   a {
@@ -14,27 +17,18 @@ const { href } = Astro.props;
     place-content: center;
     padding: 0.56em 2em;
     gap: 0.8em;
-    color: var(--accent-text-over);
     text-decoration: none;
     line-height: 1.1;
     overflow: hidden;
-    background: var(--accent-regular);
-    box-shadow: var(--shadow-md);
     white-space: nowrap;
   }
 
-  /* Overlay for hover effects. */
   a::after {
     content: "";
     position: absolute;
     inset: 0;
     pointer-events: none;
-    transition: background-color var(--theme-transition);
+    transition: background-color 0.2s ease-in-out;
     mix-blend-mode: overlay;
-  }
-
-  a:focus::after,
-  a:hover::after {
-    background-color: hsla(var(--gray-999-basis), 0.3);
   }
 </style>

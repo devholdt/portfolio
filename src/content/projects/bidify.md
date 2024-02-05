@@ -41,7 +41,3 @@ tags:
 &nbsp;
 
 - **Responsive Design**: The website is designed to be responsive and user-friendly across various devices.
-
-<button class="border">
-  Click me!
-</button>

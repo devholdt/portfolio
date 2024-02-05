@@ -13,7 +13,11 @@ const { tagline, title } = Astro.props;
   ]}
 >
   <div>
-    <h1 class="title text-4xl sm:text-5xl md:text-7xl">{title}</h1>
+    <h1
+      class="title text-gray-0 dark:text-white text-4xl sm:text-5xl md:text-7xl"
+    >
+      {title}
+    </h1>
     {tagline && <p class="tagline">{tagline}</p>}
   </div>
   <slot />
@@ -22,9 +26,5 @@ const { tagline, title } = Astro.props;
 <style>
   .hero {
     max-width: 768px;
-  }
-
-  .title {
-    color: var(--gray-0);
   }
 </style>

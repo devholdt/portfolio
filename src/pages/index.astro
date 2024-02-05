@@ -10,22 +10,22 @@ const projects = await getCollection("projects");
 
 <BaseLayout>
   <div class="gap-20 lg:gap-48">
-    <div class="container mx-auto px-4">
+    <header class="container mx-auto px-4 hero flex flex-col">
       <div class="theme-toggle flex justify-end w-full mb-10">
         <ThemeToggle />
       </div>
-      <header class="hero flex flex-col">
-        <Hero
-          title="Hello, my name is Mathias B. Herholdt"
-          tagline="I am a front-end development student at Noroff University"
-        />
-      </header>
-    </div>
+      <Hero
+        title="Hello, my name is Mathias B. Herholdt"
+        tagline="I am a front-end development student at Noroff University"
+      />
+    </header>
 
-    <main class="container mx-auto px-4 gap-20 lg:gap-48">
+    <div class="container mx-auto px-4 gap-20 lg:gap-48">
       <section class="section with-background with-cta">
         <div class="section-header mb-4 text-center md:text-left">
-          <h3 class="text-3xl md:text-5xl">Projects</h3>
+          <h3 class="text-gray-0 dark:text-graydark-0 text-3xl md:text-5xl">
+            Projects
+          </h3>
         </div>
         <ul class="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
           {
@@ -37,12 +37,6 @@ const projects = await getCollection("projects");
           }
         </ul>
       </section>
-    </main>
+    </div>
   </div>
 </BaseLayout>
-
-<style>
-  .section-header h3 {
-    color: var(--gray-0);
-  }
-</style>

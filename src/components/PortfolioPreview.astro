@@ -9,10 +9,13 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="card grid shadow-md text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
+  class="card grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
   href={`/projects/${slug}`}
 >
-  <span class="title z-10 m-2 px-4 py-2 shadow-md">{data.title}</span>
+  <span
+    class="title bg-gray-999 dark:bg-graydark-999 text-gray-50 dark:text-graydark-50 z-10 m-2 px-4 py-2 shadow-md"
+    >{data.title}</span
+  >
   <img
     class="w-full h-full object-cover"
     src={data.img_main}
@@ -25,7 +28,6 @@ const { data, slug } = Astro.props.project;
 <style>
   .card {
     position: relative;
-    box-shadow: var(--shadow-md);
     font-family: var(--font-brand);
     border-radius: 0.5rem;
   }
@@ -47,7 +49,6 @@ const { data, slug } = Astro.props.project;
   }
 
   .card:hover {
-    border-color: var(--gray-100);
     transform: scale(1.03);
   }
 
@@ -57,8 +58,6 @@ const { data, slug } = Astro.props.project;
 
   .title {
     grid-area: 1 / 1 / 2 / 2;
-    background: var(--gray-999);
-    color: var(--gray-50);
     transition: 0.2s ease-in-out;
   }
 
