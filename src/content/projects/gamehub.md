@@ -8,8 +8,32 @@ description: |
   A website for a fictional video game retailer where users can buy and sell games as well as read the latest news from the world of gaming.
 tags:
   - Website
-  - Gaming
   - Retail
+  - REST API
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+<p class="text-2xl">
+  GameHub is a gaming website that provides gaming news and a game store. It was made as a cross-course project at Noroff University spanning multiple courses such as design, programming foundations and interactive design.
+</p>
+
+&nbsp;
+
+---
+
+&nbsp;
+
+<p class="text-lg font-bold">
+  Features
+</p>
+
+&nbsp;
+
+- **Design**: A simple design with a clear layout for easy navigation.
+
+&nbsp;
+
+- **Store**: A Store page including a shopping card with dynamic price change depending on added products.
+
+&nbsp;
+
+- **WordPress REST API**: The products are added to a WordPress database and fetched using REST API.

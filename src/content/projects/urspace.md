@@ -12,4 +12,28 @@ tags:
   - Social media
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+<p class="text-2xl">
+  UrSpace is a post content based social media website where logged-in users can read posts or post content themselves. The site was made as part of the JavaScript 2 course assignment at Noroff University.
+</p>
+
+&nbsp;
+
+---
+
+&nbsp;
+
+<p class="text-lg font-bold">
+  Features
+</p>
+
+&nbsp;
+
+- **Design**: The design and layout is minimalistic to keep the site user-friendly and accessible.
+
+&nbsp;
+
+- **CRUD**: Once logged in, a user can create, read, update and delete their own post content that is displayed in the main feed and their own profile.
+
+&nbsp;
+
+- **API**: Posts are fetched from the Noroff social media API and displayed on the main feed for the logged-in user to read, add comments and react to.

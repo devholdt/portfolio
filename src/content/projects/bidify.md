@@ -22,13 +22,26 @@ tags:
 
 &nbsp;
 
-<p class="text-lg">
+<p class="text-lg font-bold">
   Features
 </p>
 
 &nbsp;
 
 - **User Authentication**: Users can register, login, and manage their profiles.
+
+&nbsp;
+
 - **Listing Management**: Users can create, edit, and delete their own listings.
+
+&nbsp;
+
 - **Bidding System**: Users can place bids on listings and view bid history.
+
+&nbsp;
+
 - **Responsive Design**: The website is designed to be responsive and user-friendly across various devices.
+
+<button class="border">
+  Click me!
+</button>
