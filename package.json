@@ -1,0 +1,36 @@
+{
+  "name": "mherholdt94.github.io",
+  "version": "0.0.6",
+  "description": "Portfolio webpage for front-end developer Mathias Herholdt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"astro dev\" \"tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch --poll\"",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MHerholdt94/MHerholdt94.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MHerholdt94/MHerholdt94.github.io/issues"
+  },
+  "homepage": "https://github.com/MHerholdt94/MHerholdt94.github.io#readme",
+  "dependencies": {
+    "astro": "^4.2.6"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
+    "@types/node": "^20.11.13",
+    "concurrently": "^8.2.2",
+    "node-html-parser": "^6.1.12",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
+    "tailwindcss": "^3.4.1"
+  }
+}

@@ -1,0 +1,83 @@
+---
+import Icon from "./Icon.astro";
+const iconStyles =
+  "icon flex z-10 relative p-2 w-8 h-8 text-base text-gray-300";
+---
+
+<theme-toggle>
+  <button class="flex rounded-full shadow-inner bg-gray-400 dark:bg-gray-200">
+    <span
+      class="theme-name absolute p-0 overflow-hidden border-0 w-px h-px whitespace-nowrap"
+      >Dark theme</span
+    >
+    <span
+      class=`light ${iconStyles} before:bg-primary-dark dark:before:bg-primary-dark`
+      ><Icon icon="sun" /></span
+    >
+    <span class=`dark ${iconStyles}`><Icon icon="moon-stars" /></span>
+  </button>
+</theme-toggle>
+
+<style>
+  .theme-name {
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .icon.light::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+    border-radius: 999rem;
+  }
+
+  :global(.dark) .icon.light::before {
+    transform: translateX(100%);
+  }
+
+  :global(.dark) .icon.dark,
+  :global(html:not(.dark)) .icon.light,
+  button[aria-pressed="false"] .icon.light {
+    color: #eeeeee;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .icon,
+    .icon.light::before {
+      transition:
+        transform 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+    }
+  }
+
+  @media (forced-colors: active) {
+    .icon.light::before {
+      background-color: SelectedItem;
+    }
+  }
+</style>
+
+<script>
+  class ThemeToggle extends HTMLElement {
+    constructor() {
+      super();
+
+      const button = this.querySelector("button")!;
+
+      const setTheme = (dark: boolean) => {
+        document.documentElement.classList[dark ? "add" : "remove"]("dark");
+        button.setAttribute("aria-pressed", String(dark));
+      };
+
+      button.addEventListener("click", () => setTheme(!this.isDark()));
+
+      setTheme(this.isDark());
+    }
+
+    isDark() {
+      return document.documentElement.classList.contains("dark");
+    }
+  }
+  customElements.define("theme-toggle", ThemeToggle);
+</script>

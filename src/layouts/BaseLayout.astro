@@ -1,0 +1,43 @@
+---
+import MainHead from "../components/MainHead.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead title={title} description={description} />
+  </head>
+  <body class="font-body bg-gray-500 dark:bg-gray-100 antialiased">
+    <div>
+      <main
+        class="border-4 border-primary-light m-2 pt-2 pb-4 md:pt-5 md:pb-8 flex flex-col gap-10 md:m-6 md:border-8"
+      >
+        <slot />
+      </main>
+      <Footer />
+    </div>
+
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      localStorage.theme = "light";
+      localStorage.theme = "dark";
+      localStorage.removeItem("theme");
+    </script>
+  </body>
+</html>

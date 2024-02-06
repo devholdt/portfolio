@@ -1,0 +1,36 @@
+---
+interface Props {
+  title: string;
+  tagline?: string;
+}
+
+const { tagline, title } = Astro.props;
+---
+
+<div
+  class:list={[
+    "hero flex flex-col gap-4 text-md md:order-1 md:text-left sm:text-lg md:text-2xl",
+  ]}
+>
+  <div>
+    <h1
+      class="title font-heading text-gray-100 dark:text-gray-500 text-4xl sm:text-5xl md:text-7xl"
+    >
+      {title}
+    </h1>
+    {
+      tagline && (
+        <p class="tagline text-gray-200 dark:text-primary-lightest">
+          {tagline}
+        </p>
+      )
+    }
+  </div>
+  <slot />
+</div>
+
+<style>
+  .hero {
+    max-width: 768px;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+
+const projects = await getCollection("projects");
+---
+
+<BaseLayout>
+  <div class="gap-20 lg:gap-48">
+    <header class="container mx-auto px-4 hero flex flex-col">
+      <div class="theme-toggle flex justify-end w-full mb-10">
+        <ThemeToggle client:idle />
+      </div>
+      <Hero
+        title="Hello, my name is Mathias B. Herholdt"
+        tagline="Front-end developer student at Noroff University"
+      />
+    </header>
+
+    <div
+      class="container mx-auto px-4 my-20 text-2xl text-gray-200 dark:text-gray-500"
+    >
+      <p class="max-w-prose">
+        I am a front-end developer with a passion for creating quality websites
+        and applications with a great sense of detail. I am currently studying
+        at Noroff University, and I am working on a few personal projects on the
+        side.
+      </p>
+    </div>
+
+    <hr />
+
+    <div class="container mx-auto px-4 mt-20 gap-20 lg:gap-48">
+      <section class="section with-background with-cta">
+        <div class="section-header mb-4 text-center md:text-left">
+          <h3
+            class="font-heading text-gray-100 dark:text-gray-500 text-3xl md:text-5xl"
+          >
+            Projects
+          </h3>
+        </div>
+        <ul class="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+          {
+            projects.map((project) => (
+              <li>
+                <PortfolioPreview project={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </div>
+  </div>
+</BaseLayout>

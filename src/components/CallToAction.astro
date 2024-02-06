@@ -1,0 +1,34 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  class="flex shadow-md text-gray-400 bg-primary-regular text-center gap-1 rounded-lg"
+  href={href}><slot /></a
+>
+
+<style>
+  a {
+    position: relative;
+    place-content: center;
+    padding: 0.56em 2em;
+    gap: 0.8em;
+    text-decoration: none;
+    line-height: 1.1;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: background-color 0.2s ease-in-out;
+    mix-blend-mode: overlay;
+  }
+</style>

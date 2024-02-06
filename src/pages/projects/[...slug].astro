@@ -1,0 +1,95 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import ThemeToggle from "../../components/ThemeToggle.astro";
+
+interface Props {
+  entry: CollectionEntry<"projects">;
+}
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const linkStyles =
+  "max-w-32 w-full h-10 rounded-sm text-center flex items-center justify-center bg-primary-regular text-gray-500";
+const imageStyles =
+  "rounded-lg shadow-lg max-h-400 h-full w-full object-cover object-top md:w-380";
+---
+
+<BaseLayout
+  title={`Mathias B. Herholdt | ${entry.data.title}`}
+  description={entry.data.description}
+>
+  <header
+    class="container mx-auto px-4 gap-2 pb-10 border-b border-primary-regular dark:border-primary-lighter"
+  >
+    <div class="flex justify-between">
+      <a
+        class="back-link p-2 text-gray-100 dark:text-primary-lightest underline underline-offset-4 decoration-transparent hover:decoration-current duration-200 ease-in-out"
+        href="/"><Icon icon="arrow-left" />Back</a
+      >
+      <div class="theme-toggle">
+        <ThemeToggle client:idle />
+      </div>
+    </div>
+    <Hero title={entry.data.title} tagline={entry.data.tagline}>
+      <p
+        class="description max-w-prose text-gray-100 dark:text-gray-500 text-lg md:text-md"
+      >
+        {entry.data.description}
+      </p>
+    </Hero>
+  </header>
+  <div class="container mx-auto px-4">
+    <div class="content flex flex-wrap gap-20 text-gray-100 dark:text-gray-500">
+      <div class="max-w-prose">
+        <Content />
+        <div class="flex gap-4 mt-8">
+          <a href={entry.data.url_repo} target="_blank" class={linkStyles}
+            >Repo</a
+          >
+          <a href={entry.data.url_live} target="_blank" class={linkStyles}
+            >Live</a
+          >
+        </div>
+      </div>
+
+      <div class="flex gap-6 flex-col md:flex-row w-full md:w-max">
+        <div>
+          {
+            entry.data.img_main && (
+              <img
+                class={imageStyles}
+                src={entry.data.img_main}
+                alt={entry.data.img_main_alt || ""}
+              />
+            )
+          }
+        </div>
+        <div>
+          {
+            entry.data.img_secondary && (
+              <img
+                class={imageStyles}
+                src={entry.data.img_secondary}
+                alt={entry.data.img_secondary_alt || ""}
+              />
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex gap-6"></div>
+</BaseLayout>

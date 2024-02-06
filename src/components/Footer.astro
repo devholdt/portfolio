@@ -1,0 +1,68 @@
+---
+import Icon from "./Icon.astro";
+import CallToAction from "./CallToAction.astro";
+const currentYear = new Date().getFullYear();
+const linkStyling =
+  "text-sm text-gray-200 dark:text-primary-lighter underline decoration-transparent underline-offset-2 hover:decoration-current duration-200";
+---
+
+<footer
+  class="bg-shade dark:bg-shade text-gray-100 dark:text-gray-400 border-t border-grey px-8 py-6 sm:px-16 sm:py-12"
+>
+  <div class="flex flex-col justify-between">
+    <div class="text-left">
+      <h2 class="font-semibold">Contact</h2>
+      <p>mathiasbherholdt@gmail.com</p>
+    </div>
+    <div class="w-fit mt-3">
+      <CallToAction href="mailto:mathiasbherholdt@gmail.com">
+        message me
+        <Icon icon="paper-plane-tilt" size="1.2em" />
+      </CallToAction>
+    </div>
+    <hr class="my-5" />
+  </div>
+
+  <div class="flex justify-between">
+    <div class="hidden sm:block">
+      <h3 class="text-sm font-semibold">You can also find me here</h3>
+      <p>
+        <a
+          class={linkStyling}
+          href="https://github.com/mherholdt94"
+          target="_blank"
+        >
+          GitHub</a
+        >
+      </p>
+      <p>
+        <a
+          class={linkStyling}
+          href="https://twitter.com/harboldtt"
+          target="_blank"
+        >
+          Twitter</a
+        >
+      </p>
+    </div>
+    <div class="group text-nowrap mt-auto">
+      <p>&copy;{currentYear} Mathias B. Herholdt</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .group {
+      flex-direction: row;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  }
+</style>
