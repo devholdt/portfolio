@@ -1,12 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/pages/*.astro",
-    "./src/pages/projects/*.astro",
-    "./src/components/*.astro",
-    "./src/layouts/*.astro",
-    "./src/content/*.md",
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
       body: ["Public Sans", "sans-serif"],

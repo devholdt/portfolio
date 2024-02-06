@@ -669,10 +669,6 @@ video {
   max-height: 400px;
 }
 
-.w-32 {
-  width: 8rem;
-}
-
 .w-8 {
   width: 2rem;
 }
@@ -690,12 +686,12 @@ video {
   width: 1px;
 }
 
-.max-w-prose {
-  max-width: 65ch;
-}
-
 .max-w-32 {
   max-width: 8rem;
+}
+
+.max-w-prose {
+  max-width: 65ch;
 }
 
 .transform {
@@ -813,6 +809,11 @@ video {
   background-color: rgb(238 238 238 / var(--tw-bg-opacity));
 }
 
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-primary-regular {
   --tw-bg-opacity: 1;
   background-color: rgb(0 92 97 / var(--tw-bg-opacity));
@@ -820,16 +821,6 @@ video {
 
 .bg-shade {
   background-color: #00000040;
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -928,6 +919,10 @@ video {
   line-height: 1.25rem;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .font-normal {
   font-weight: 400;
 }
@@ -969,12 +964,12 @@ video {
   text-decoration-color: transparent;
 }
 
-.underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
 .underline-offset-2 {
   text-underline-offset: 2px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
 }
 
 .antialiased {
@@ -1024,18 +1019,6 @@ video {
 
 .hover\:decoration-current:hover {
   text-decoration-color: currentColor;
-}
-
-.hover\:decoration-gray-300:hover {
-  text-decoration-color: #A7A7A7;
-}
-
-.hover\:decoration-gray-100:hover {
-  text-decoration-color: #222831;
-}
-
-.hover\:decoration-gray-500:hover {
-  text-decoration-color: #FFFFFF;
 }
 
 .hover\:shadow-xl:hover {
@@ -1096,21 +1079,6 @@ video {
 :is(.dark .dark\:text-primary-lightest) {
   --tw-text-opacity: 1;
   color: rgb(1 168 177 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-white) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-gray-300) {
-  --tw-text-opacity: 1;
-  color: rgb(167 167 167 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:text-gray-600) {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:before\:bg-primary-dark)::before {
