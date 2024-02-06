@@ -969,6 +969,10 @@ video {
   text-underline-offset: 4px;
 }
 
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1016,6 +1020,18 @@ video {
 
 .hover\:decoration-current:hover {
   text-decoration-color: currentColor;
+}
+
+.hover\:decoration-gray-300:hover {
+  text-decoration-color: #A7A7A7;
+}
+
+.hover\:decoration-gray-100:hover {
+  text-decoration-color: #222831;
+}
+
+.hover\:decoration-gray-500:hover {
+  text-decoration-color: #FFFFFF;
 }
 
 .hover\:shadow-xl:hover {
