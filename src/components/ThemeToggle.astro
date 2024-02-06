@@ -1,5 +1,5 @@
 ---
-// import Icon from "./Icon.astro";
+import Icon from "./Icon.astro";
 const iconStyles =
   "icon flex z-10 relative p-2 w-8 h-8 text-base text-gray-300";
 ---
@@ -10,20 +10,15 @@ const iconStyles =
       class="theme-name absolute p-0 overflow-hidden border-0 w-px h-px whitespace-nowrap"
       >Dark theme</span
     >
-    <!-- <span
-      class=`light ${iconStyles} before:bg-primary-dark dark:before:bg-primary-dark`
-      ><Icon icon="sun" />
-    </span> -->
-    <!-- <span class=`dark ${iconStyles}`><Icon icon="moon-stars" /></span> -->
     <span
       class=`light ${iconStyles} before:bg-primary-dark dark:before:bg-primary-dark`
-      >L
+      ><Icon icon="sun" />
     </span>
-    <span class=`dark ${iconStyles}`>D</span>
+    <span class=`dark ${iconStyles}`><Icon icon="moon-stars" /></span>
   </button>
 </theme-toggle>
 
-<style>
+<!-- <style>
   .theme-name {
     margin: -1px;
     clip: rect(0, 0, 0, 0);
@@ -61,9 +56,9 @@ const iconStyles =
       background-color: SelectedItem;
     }
   }
-</style>
+</style> -->
 
-<script>
+<!-- <script>
   class ThemeToggle extends HTMLElement {
     constructor() {
       super();
@@ -85,4 +80,4 @@ const iconStyles =
     }
   }
   customElements.define("theme-toggle", ThemeToggle);
-</script>
+</script> -->
