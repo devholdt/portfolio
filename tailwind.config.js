@@ -8,6 +8,10 @@ module.exports = {
     "./src/content/*.md",
   ],
   theme: {
+    fontFamily: {
+      body: ["Public Sans", "sans-serif"],
+      heading: ["Rubik", "sans-serif"],
+    },
     extend: {
       colors: {
         gray: {
@@ -51,6 +55,10 @@ module.exports = {
           dark: "#006065",
           link: "#00ADB5",
         },
+      },
+      spacing: {
+        380: "380px",
+        400: "400px",
       },
       boxShadow: {
         light: "1px 2px 5px rgba(0,0,0,0.5)",

@@ -15,11 +15,11 @@ const { title, description } = Astro.props;
     <MainHead title={title} description={description} />
   </head>
   <body
-    class="text-white dark:text-graydark-50 bg-white dark:bg-graydark-999 antialiased"
+    class="text-white font-body dark:text-graydark-50 bg-white dark:bg-graydark-999 antialiased"
   >
     <div>
       <main
-        class="border-8 border-primary-dark m-6 pt-5 pb-8 flex flex-col gap-10"
+        class="border-4 border-primary-dark m-2 pt-2 pb-4 md:pt-5 md:pb-8 flex flex-col gap-10 md:m-6 md:border-8"
       >
         <slot />
       </main>
@@ -41,20 +41,5 @@ const { title, description } = Astro.props;
       localStorage.theme = "dark";
       localStorage.removeItem("theme");
     </script>
-
-    <style>
-      :root {
-        --_placeholder-bg: linear-gradient(transparent, transparent);
-        --bg-image-subtle-1: var(--_placeholder-bg);
-        --bg-image-subtle-2: var(--_placeholder-bg);
-        --bg-image-footer: var(--_placeholder-bg);
-        --bg-svg-blend-mode: overlay;
-        --bg-blend-mode: darken;
-        --bg-image-aspect-ratio: 2.25;
-        --bg-scale: 1.68;
-        --bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-        --bg-gradient-size: calc(var(--bg-scale) * 100%);
-      }
-    </style>
   </body>
 </html>

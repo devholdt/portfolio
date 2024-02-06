@@ -14,11 +14,15 @@ const { tagline, title } = Astro.props;
 >
   <div>
     <h1
-      class="title text-gray-0 dark:text-white text-4xl sm:text-5xl md:text-7xl"
+      class="title font-heading text-gray-0 dark:text-white text-4xl sm:text-5xl md:text-7xl"
     >
       {title}
     </h1>
-    {tagline && <p class="tagline">{tagline}</p>}
+    {
+      tagline && (
+        <p class="tagline text-gray-100 dark:text-graydark-100">{tagline}</p>
+      )
+    }
   </div>
   <slot />
 </div>

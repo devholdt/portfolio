@@ -6,6 +6,9 @@ img_secondary: /assets/bidify/bidify_profile.jpg
 img_secondary_alt: bidify profile page
 description: |
   An auction website where users can view, create and bid on listings using an API to fetch and recieve data.
+tagline: Start bidding, start winning - only at Bidify
+url_repo: https://github.com/MHerholdt94/bidify
+url_live: https://bidify-auctions.netlify.app/
 tags:
   - Website
   - API

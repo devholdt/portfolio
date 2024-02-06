@@ -9,7 +9,7 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="card grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
+  class="card font-heading grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
   href={`/projects/${slug}`}
 >
   <span
@@ -28,7 +28,6 @@ const { data, slug } = Astro.props.project;
 <style>
   .card {
     position: relative;
-    font-family: var(--font-brand);
     border-radius: 0.5rem;
   }
 

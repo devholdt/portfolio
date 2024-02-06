@@ -9,7 +9,7 @@ interface Props {
   size?: string;
 }
 
-const { color = "currentcolor", gradient, icon, size } = Astro.props;
+const { color = "currentcolor", gradient, icon } = Astro.props;
 const iconPath = iconPaths[icon];
 
 const attrs: HTMLAttributes<"svg"> = {};

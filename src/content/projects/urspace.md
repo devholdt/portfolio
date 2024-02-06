@@ -6,6 +6,9 @@ img_secondary: /assets/urspace/urspace_profile.jpg
 img_secondary_alt: UrSpace profile page
 description: |
   A simple social media website with front-end CRUD functionality for post content and user profiles using the Noroff API
+tagline: Stay in touch
+url_repo: https://github.com/MHerholdt94/js2-ca
+url_live: https://urspace.netlify.app/
 tags:
   - Website
   - CRUD

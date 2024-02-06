@@ -20,6 +20,8 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const imageStyles =
+  "rounded-lg shadow-lg max-h-400 h-full w-full object-cover object-top md:w-380";
 ---
 
 <BaseLayout
@@ -30,21 +32,20 @@ const { Content } = await entry.render();
     class="container mx-auto px-4 gap-2 pb-10 border-b border-gray-400 dark:border-graydark-400"
   >
     <div class="flex justify-between">
-      <a class="back-link p-2 text-gray-100 dark:text-graydark-100" href="/"
-        ><Icon icon="arrow-left" />Back</a
+      <a
+        class="back-link p-2 text-gray-100 dark:text-graydark-100 underline underline-offset-4 decoration-transparent hover:decoration-current duration-200 ease-in-out"
+        href="/"><Icon icon="arrow-left" />Back</a
       >
       <div class="theme-toggle">
-        <ThemeToggle />
+        <ThemeToggle client:idle />
       </div>
     </div>
-    <Hero title={entry.data.title}>
-      <div class="p-2">
-        <p
-          class="description text-gray-0 dark:text-graydark-0 text-lg md:text-md"
-        >
-          {entry.data.description}
-        </p>
-      </div>
+    <Hero title={entry.data.title} tagline={entry.data.tagline}>
+      <p
+        class="description max-w-prose text-gray-0 dark:text-graydark-0 text-lg md:text-md"
+      >
+        {entry.data.description}
+      </p>
     </Hero>
   </header>
   <div class="container mx-auto px-4">
@@ -57,11 +58,12 @@ const { Content } = await entry.render();
         </div>
       </div>
 
-      <div class="flex gap-6">
+      <div class="flex gap-6 flex-col md:flex-row w-full md:w-max">
         <div>
           {
             entry.data.img_main && (
               <img
+                class={imageStyles}
                 src={entry.data.img_main}
                 alt={entry.data.img_main_alt || ""}
               />
@@ -72,6 +74,7 @@ const { Content } = await entry.render();
           {
             entry.data.img_secondary && (
               <img
+                class={imageStyles}
                 src={entry.data.img_secondary}
                 alt={entry.data.img_secondary_alt || ""}
               />
@@ -84,40 +87,3 @@ const { Content } = await entry.render();
 
   <div class="flex gap-6"></div>
 </BaseLayout>
-
-<style>
-  .description {
-    max-width: 54ch;
-  }
-
-  .content img {
-    box-shadow: var(--shadow-md);
-    width: 380px;
-    height: 400px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 0.5rem;
-  }
-
-  .back-link,
-  .content :global(a) {
-    /* color: var(--gray-100); */
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color 0.2s ease-in-out;
-  }
-
-  .back-link:hover,
-  .back-link:focus,
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
-  @media (min-width: 768px) {
-    .back-link {
-      display: block;
-      align-self: flex-start;
-    }
-  }
-</style>

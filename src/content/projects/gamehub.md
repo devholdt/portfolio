@@ -6,6 +6,9 @@ img_secondary: /assets/gamehub/gamehub_store.jpg
 img_secondary_alt: gamehub store page
 description: |
   A website for a fictional video game retailer where users can buy and sell games as well as read the latest news from the world of gaming.
+tagline: Enter the universe of games!
+url_repo: https://github.com/MHerholdt94/GameHub
+url_live: https://gamehubnew.netlify.app/
 tags:
   - Website
   - Retail
