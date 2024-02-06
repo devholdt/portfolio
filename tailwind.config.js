@@ -12,10 +12,6 @@ module.exports = {
       body: ["Public Sans", "sans-serif"],
       heading: ["Rubik", "sans-serif"],
     },
-    colors: {
-      white: "#ffffff",
-      black: "#000000",
-    },
     extend: {
       colors: {
         gray: {
