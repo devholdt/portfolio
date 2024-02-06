@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const linkStyles =
-  "w-32 h-10 rounded-sm text-center flex items-center justify-center bg-primary-regular text-gray-500";
+  "max-w-32 w-full h-10 rounded-sm text-center flex items-center justify-center bg-primary-regular text-gray-500";
 const imageStyles =
   "rounded-lg shadow-lg max-h-400 h-full w-full object-cover object-top md:w-380";
 ---
