@@ -1,6 +1,6 @@
 {
   "name": "mherholdt94.github.io",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Portfolio webpage for front-end developer Mathias Herholdt",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/MHerholdt94/MHerholdt94.github.io#readme",
   "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.2.6"
   },
   "devDependencies": {
