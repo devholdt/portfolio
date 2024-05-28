@@ -65,27 +65,14 @@ const iconStyles =
 
       const button = this.querySelector("button")!;
 
-      const setTheme = (dark) => {
+      const setTheme = (dark: boolean) => {
         document.documentElement.classList[dark ? "add" : "remove"]("dark");
         button.setAttribute("aria-pressed", String(dark));
-        localStorage.setItem("theme", dark ? "dark" : "light");
-      };
-
-      const loadTheme = () => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-          setTheme(savedTheme === "dark");
-        } else {
-          const prefersDark = window.matchMedia(
-            "(prefers-color-scheme: dark)",
-          ).matches;
-          setTheme(prefersDark);
-        }
       };
 
       button.addEventListener("click", () => setTheme(!this.isDark()));
 
-      loadTheme();
+      setTheme(this.isDark());
     }
 
     isDark() {
