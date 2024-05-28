@@ -1,5 +1,5 @@
 {
-  "name": "mherholdt94.github.io",
+  "name": "herholdt.dev",
   "version": "0.1.0",
   "description": "Portfolio webpage for front-end developer Mathias Herholdt",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MHerholdt94/MHerholdt94.github.io.git"
+    "url": "git+https://github.com/devholdt/portfolio"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MHerholdt94/MHerholdt94.github.io/issues"
+    "url": "https://github.com/devholdt/portfolio/issues"
   },
-  "homepage": "https://github.com/MHerholdt94/MHerholdt94.github.io#readme",
+  "homepage": "https://github.com/devholdt/portfolio#readme",
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.2.6"
