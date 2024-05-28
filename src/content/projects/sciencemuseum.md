@@ -7,7 +7,7 @@ img_secondary_alt: tønsberg science museum exhibitions page
 description: |
   A website for a fictional science museum based in my home town. The site is catered to inquisitive, curious children and their families.
 tagline: Explore together
-url_repo: https://github.com/MHerholdt94/Tonsberg-Science-Museum
+url_repo: https://github.com/devholdt/Tonsberg-Science-Museum
 url_live: https://tbgsciencemuseum.netlify.app/
 tags:
   - Website

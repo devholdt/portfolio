@@ -7,7 +7,7 @@ img_secondary_alt: timesignature bloglist page
 description: |
   A website with blog posts about all things drumming. The blog posts is fetched using WordPress REST API.
 tagline: "The #1 blog for all things drumming and rhythm"
-url_repo: https://github.com/MHerholdt94/project-exam-1
+url_repo: https://github.com/devholdt/project-exam-1
 url_live: https://timesignature.netlify.app/
 tags:
   - Website
