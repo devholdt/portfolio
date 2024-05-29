@@ -9,16 +9,16 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="card group relative rounded-lg font-heading grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-shade before:transition before:opacity-100 before:hover:opacity-0 hover:scale-105"
+  class="card group relative grid h-48 overflow-hidden rounded-lg font-heading text-lg font-normal shadow-md duration-200 ease-in-out before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-shade before:opacity-100 before:transition before:content-[''] hover:scale-105 hover:shadow-xl before:hover:opacity-0 md:h-60"
   href={`/projects/${slug}`}
 >
   <span
-    class="title grid-area-title transition ease-in-out duration-200 group-hover:opacity-0 bg-gray-400 dark:bg-gray-100 text-gray-100 dark:text-gray-500 z-10 m-2 px-4 py-2 shadow-md"
+    class="title z-10 m-2 bg-gray-400 px-4 py-2 text-gray-100 shadow-md transition duration-200 ease-in-out grid-area-title group-hover:opacity-0 dark:bg-gray-100 dark:text-gray-500"
   >
     {data.title}
   </span>
   <img
-    class="w-full h-full object-cover grid-area-image"
+    class="h-full w-full object-cover grid-area-image"
     src={data.img_main}
     alt={data.img_main_alt || ""}
     loading="lazy"

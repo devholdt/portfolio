@@ -11,8 +11,8 @@ const projects = await getCollection("projects");
 
 <BaseLayout>
   <div class="gap-20 lg:gap-48">
-    <header class="container mx-auto px-4 flex flex-col">
-      <div class="theme-toggle flex justify-end w-full mb-10">
+    <header class="container mx-auto flex flex-col px-4">
+      <div class="theme-toggle mb-10 flex w-full justify-end">
         <ThemeToggle />
       </div>
       <Hero
@@ -22,7 +22,7 @@ const projects = await getCollection("projects");
     </header>
 
     <div
-      class="container mx-auto px-4 my-20 text-2xl text-gray-200 dark:text-gray-500"
+      class="container mx-auto my-20 px-4 text-2xl text-gray-200 dark:text-gray-500"
     >
       <p class="max-w-prose">
         I am a front-end developer with a passion for creating quality websites
@@ -34,16 +34,16 @@ const projects = await getCollection("projects");
 
     <hr />
 
-    <div class="container mx-auto px-4 mt-20 gap-20 lg:gap-48">
+    <div class="container mx-auto mt-20 gap-20 px-4 lg:gap-48">
       <section class="section with-background with-cta">
         <div class="section-header mb-4 text-center md:text-left">
           <h3
-            class="font-heading text-gray-100 dark:text-gray-500 text-3xl md:text-5xl"
+            class="font-heading text-3xl text-gray-100 dark:text-gray-500 md:text-5xl"
           >
             Projects
           </h3>
         </div>
-        <ul class="grid gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {
             projects.map((project) => (
               <li>

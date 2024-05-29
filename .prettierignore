@@ -1,0 +1,8 @@
+build
+coverage
+
+.astro
+.github
+/dist
+/node_modules
+/public
