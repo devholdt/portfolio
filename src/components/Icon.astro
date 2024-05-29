@@ -6,7 +6,6 @@ interface Props {
   icon: keyof typeof iconPaths;
   color?: string;
   gradient?: boolean;
-  size?: string;
 }
 
 const { color = "currentcolor", gradient, icon } = Astro.props;
@@ -26,6 +25,7 @@ const gradientId =
   aria-hidden="true"
   stroke={gradient ? `url(#${gradientId})` : color}
   fill={gradient ? `url(#${gradientId})` : color}
+  class="align-middle w-4 h-4"
   {...attrs}
 >
   <g set:html={iconPath} />
@@ -46,11 +46,3 @@ const gradientId =
     )
   }
 </svg>
-
-<style>
-  svg {
-    vertical-align: middle;
-    width: var(--size, 1em);
-    height: var(--size, 1em);
-  }
-</style>

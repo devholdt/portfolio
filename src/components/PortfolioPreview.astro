@@ -9,58 +9,19 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="card font-heading grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60"
+  class="card group relative rounded-lg font-heading grid shadow-md hover:shadow-xl text-lg font-normal duration-200 ease-in-out overflow-hidden h-48 md:h-60 before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-shade before:transition before:opacity-100 before:hover:opacity-0 hover:scale-105"
   href={`/projects/${slug}`}
 >
   <span
-    class="title bg-gray-400 dark:bg-gray-100 text-gray-100 dark:text-gray-500 z-10 m-2 px-4 py-2 shadow-md"
-    >{data.title}</span
+    class="title grid-area-title transition ease-in-out duration-200 group-hover:opacity-0 bg-gray-400 dark:bg-gray-100 text-gray-100 dark:text-gray-500 z-10 m-2 px-4 py-2 shadow-md"
   >
+    {data.title}
+  </span>
   <img
-    class="w-full h-full object-cover"
+    class="w-full h-full object-cover grid-area-image"
     src={data.img_main}
     alt={data.img_main_alt || ""}
     loading="lazy"
     decoding="async"
   />
 </a>
-
-<style>
-  .card {
-    position: relative;
-    border-radius: 0.5rem;
-  }
-
-  .card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.33);
-    transition: opacity 0.2s ease-in-out;
-    opacity: 1;
-  }
-
-  .card:hover::before {
-    opacity: 0;
-  }
-
-  .card:hover {
-    transform: scale(1.03);
-  }
-
-  .card:hover .title {
-    opacity: 0%;
-  }
-
-  .title {
-    grid-area: 1 / 1 / 2 / 2;
-    transition: 0.2s ease-in-out;
-  }
-
-  img {
-    grid-area: 1 / 1 / 3 / 3;
-  }
-</style>

@@ -15,6 +15,8 @@ module.exports = {
           400: "#EEEEEE",
           500: "#FFFFFF",
         },
+        black: "#000000",
+        white: "#FFFFFF",
         shade: "#00000040",
         primary: {
           lightest: "#01A8B1",
@@ -32,5 +34,46 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".grid-area-title": {
+          "grid-area": "1 / 1 / 2 / 2",
+        },
+        ".grid-area-image": {
+          "grid-area": "1 / 1 / 3 / 3",
+        },
+        ".clip-rect": {
+          clip: "rect(0, 0, 0, 0)",
+        },
+        ".before-light::before": {
+          content: '""',
+          "z-index": "-1",
+          position: "absolute",
+          inset: "0",
+          "border-radius": "999rem",
+          "transition-property": "transform, color",
+          "transition-duration": "200ms",
+          "transition-timing-function": "ease-in-out",
+        },
+        ".dark .before-light::before": {
+          transform: "translateX(100%)",
+        },
+        '.dark .icon-dark, .not-dark .icon-light, button[aria-pressed="false"] .icon-light':
+          {
+            color: "#EEEEEE",
+          },
+        "@media (prefers-reduced-motion: no-preference)": {
+          ".icon, .before-light::before": {
+            transition: "transform 0.2s ease-in-out, color 0.2s ease-in-out",
+          },
+        },
+        "@media (forced-colors: active)": {
+          ".before-light::before": {
+            "background-color": "SelectedItem",
+          },
+        },
+      });
+    },
+  ],
 };

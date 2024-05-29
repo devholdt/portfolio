@@ -54,24 +54,10 @@ const linkStyling =
         >
       </p>
     </div>
-    <div class="group text-nowrap mt-auto">
+    <div
+      class="flex gap-4 flex-row flex-wrap md:flex-nowrap md:flex-col md:gap-2 text-nowrap mt-auto"
+    >
       <p>&copy;{currentYear} Mathias B. Herholdt</p>
     </div>
   </div>
 </footer>
-
-<style>
-  .group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .group {
-      flex-direction: row;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-  }
-</style>
