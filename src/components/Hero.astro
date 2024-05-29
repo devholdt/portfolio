@@ -9,7 +9,7 @@ const { tagline, title } = Astro.props;
 
 <div
   class:list={[
-    "hero flex flex-col gap-4 text-md md:order-1 md:text-left sm:text-lg md:text-2xl",
+    "max-w-[768px] flex flex-col gap-4 text-md md:order-1 md:text-left sm:text-lg md:text-2xl",
   ]}
 >
   <div>
@@ -28,9 +28,3 @@ const { tagline, title } = Astro.props;
   </div>
   <slot />
 </div>
-
-<style>
-  .hero {
-    max-width: 768px;
-  }
-</style>

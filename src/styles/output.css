@@ -690,8 +690,16 @@ video {
   max-width: 8rem;
 }
 
+.max-w-\[768px\] {
+  max-width: 768px;
+}
+
 .max-w-prose {
   max-width: 65ch;
+}
+
+.max-w-\[268px\] {
+  max-width: 268px;
 }
 
 .transform {
