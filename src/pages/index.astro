@@ -3,10 +3,12 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
 
 const projects = await getCollection("projects");
+
+projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 ---
 
 <BaseLayout>
@@ -45,11 +47,13 @@ const projects = await getCollection("projects");
         </div>
         <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {
-            projects.map((project) => (
-              <li>
-                <PortfolioPreview project={project} />
-              </li>
-            ))
+            projects.map((project) => {
+              return (
+                <li>
+                  <ProjectCard project={project} />
+                </li>
+              );
+            })
           }
         </ul>
       </section>

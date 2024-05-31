@@ -14,6 +14,7 @@ export const collections = {
       img_main_alt: z.string().optional(),
       img_secondary: z.string().optional(),
       img_secondary_alt: z.string().optional(),
+      order: z.number().optional(),
     }),
   }),
 };

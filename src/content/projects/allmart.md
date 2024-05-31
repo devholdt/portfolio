@@ -13,6 +13,7 @@ tags:
   - React
   - styled-components
   - E-com
+order: 3
 ---
 
 <p class="text-2xl">
