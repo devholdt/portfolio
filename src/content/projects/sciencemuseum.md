@@ -13,6 +13,9 @@ tags:
   - Website
   - Museum
   - Family
+tech:
+  - HTML
+  - CSS
 order: 5
 ---
 

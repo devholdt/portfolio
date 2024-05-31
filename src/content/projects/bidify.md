@@ -11,8 +11,12 @@ url_repo: https://github.com/devholdt/bidify
 url_live: https://bidify-auctions.netlify.app/
 tags:
   - Website
-  - API
   - Auction
+  - API
+tech:
+  - JavaScript
+  - Sass
+  - Bootstrap
 order: 2
 ---
 

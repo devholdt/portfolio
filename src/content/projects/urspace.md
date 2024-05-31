@@ -11,8 +11,12 @@ url_repo: https://github.com/devholdt/js2-ca
 url_live: https://urspace.netlify.app/
 tags:
   - Website
-  - CRUD
-  - Social media
+  - Social Media
+  - API
+tech:
+  - JavaScript
+  - Sass
+  - Bootstrap
 order: 4
 ---
 

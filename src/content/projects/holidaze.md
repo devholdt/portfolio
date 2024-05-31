@@ -10,9 +10,13 @@ tagline: Be the curator of someones next adventure
 url_repo: https://github.com/devholdt/holidaze-pe2
 url_live: https://holidaze-nextjs.netlify.app/
 tags:
+  - Website
+  - Accomodation Booking
   - Full-stack
-  - API
-  - Accomodation booking
+tech:
+  - Next.js
+  - React
+  - Tailwind CSS
 order: 1
 ---
 

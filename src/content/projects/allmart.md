@@ -10,9 +10,12 @@ tagline: Everything you need
 url_repo: https://github.com/devholdt/ALLMART
 url_live: https://allmart-react.netlify.app/
 tags:
+  - Website
+  - E-commerce
+  - API
+tech:
   - React
   - styled-components
-  - E-com
 order: 3
 ---
 
