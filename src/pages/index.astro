@@ -2,9 +2,8 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/Hero.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import ThemeToggle from "../components/ThemeToggle.astro";
+import Header from "../components/Header.astro";
 
 const projects = await getCollection("projects");
 
@@ -13,18 +12,15 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
 
 <BaseLayout>
   <div class="gap-20 lg:gap-48">
-    <header class="container mx-auto flex flex-col px-4">
-      <div class="theme-toggle mb-10 flex w-full justify-end">
-        <ThemeToggle />
-      </div>
-      <Hero
-        title="Hello, my name is Mathias B. Herholdt"
-        tagline="Frontend developer"
-      />
-    </header>
+    <Header
+      buttonDivStyles="justify-end"
+      backButton={false}
+      heroTitle="Hello, my name is Mathias B. Herholdt"
+      heroTagline="Frontend developer"
+    />
 
     <div
-      class="container mx-auto my-20 px-4 text-2xl text-gray-200 dark:text-gray-500"
+      class="container mx-auto my-20 px-4 text-lg text-gray-200 dark:text-gray-500 md:text-2xl"
     >
       <p class="max-w-prose">
         I am a frontend developer from Norway with a passion for creating

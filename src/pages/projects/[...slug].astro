@@ -2,9 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Hero from "../../components/Hero.astro";
-import Icon from "../../components/Icon.astro";
-import ThemeToggle from "../../components/ThemeToggle.astro";
+import Header from "../../components/Header.astro";
 
 interface Props {
   entry: CollectionEntry<"projects">;
@@ -21,6 +19,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+const headerStyles =
+  "border-b border-primary-regular px-4 pb-10 dark:border-primary-lighter";
+
 const linkStyles =
   "max-w-32 w-full h-10 rounded-sm text-center flex items-center justify-center bg-primary-regular text-gray-500";
 
@@ -32,26 +33,13 @@ const imageStyles =
   title={`Mathias B. Herholdt | ${entry.data.title}`}
   description={entry.data.description}
 >
-  <header
-    class="container mx-auto gap-2 border-b border-primary-regular px-4 pb-10 dark:border-primary-lighter"
-  >
-    <div class="flex justify-between">
-      <a
-        class="back-link p-2 text-gray-100 underline decoration-transparent underline-offset-4 duration-200 ease-in-out hover:decoration-current dark:text-primary-lightest"
-        href="/"><Icon icon="arrow-left" />Back</a
-      >
-      <div class="theme-toggle">
-        <ThemeToggle />
-      </div>
-    </div>
-    <Hero title={entry.data.title} tagline={entry.data.tagline}>
-      <p
-        class="description md:text-md max-w-prose text-lg text-gray-100 dark:text-gray-500"
-      >
-        {entry.data.description}
-      </p>
-    </Hero>
-  </header>
+  <Header
+    headerStyles={headerStyles}
+    buttonDivStyles="justify-between"
+    backButton={true}
+    heroTitle={entry.data.title}
+    heroTagline={entry.data.tagline}
+  />
   <div class="container mx-auto px-4">
     <div class="content flex flex-wrap gap-20 text-gray-100 dark:text-gray-500">
       <div class="max-w-prose">
