@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "description": "Portfolio webpage for front-end developer Mathias Herholdt",
+  "description": "Portfolio webpage for frontend developer Mathias Herholdt",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
