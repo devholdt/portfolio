@@ -1,5 +1,5 @@
 ---
-import MainHead from "../components/MainHead.astro";
+import Head from "../components/Head.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
@@ -11,13 +11,12 @@ const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-  <head>
-    <MainHead title={title} description={description} />
-  </head>
+  <Head title={title} description={description} />
+
   <body class="bg-gray-500 font-body antialiased dark:bg-gray-100">
     <div>
       <main
-        class="m-2 flex flex-col gap-10 border-4 border-primary-light pb-4 pt-2 md:m-6 md:border-8 md:pb-8 md:pt-5"
+        class="m-8 flex flex-col border-4 border-primary-light pb-4 pt-2 md:m-6 md:pb-8 md:pt-5"
       >
         <slot />
       </main>

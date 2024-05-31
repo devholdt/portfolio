@@ -27,10 +27,6 @@ module.exports = {
           darker: "#002A2C",
         },
       },
-      spacing: {
-        380: "380px",
-        400: "400px",
-      },
     },
   },
   darkMode: "class",
