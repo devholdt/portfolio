@@ -23,10 +23,10 @@ const headerStyles =
   "border-b border-primary-regular px-4 pb-10 dark:border-primary-lighter";
 
 const linkStyles =
-  "max-w-32 w-full h-10 rounded-sm text-center flex items-center justify-center bg-primary-regular text-gray-500";
+  "max-w-32 w-full h-10 rounded text-center flex items-center justify-center bg-primary-regular text-gray-500 hover:bg-primary-lighter transition";
 
 const imageStyles =
-  "rounded-md shadow-md object-cover object-top border-2 border-primary-darker";
+  "rounded-md shadow-md object-cover object-top w-[400px] h-[400px] hover:scale-105 transition";
 ---
 
 <BaseLayout
@@ -41,8 +41,38 @@ const imageStyles =
     heroTagline={entry.data.tagline}
   />
   <div class="container mx-auto px-4">
-    <div class="content flex flex-wrap gap-20 text-gray-100 dark:text-gray-500">
-      <div class="max-w-prose">
+    <div
+      class="content flex flex-col flex-wrap text-gray-100 dark:text-gray-500"
+    >
+      <div class="my-4 flex flex-wrap gap-2">
+        <div
+          class="bg-primary-darkTransparent dark:bg-primary-lightTransparent flex flex-col gap-1 rounded p-2"
+        >
+          <div class="flex flex-wrap gap-2">
+            {
+              entry.data.tech?.map((tech) => (
+                <div class="cursor-default rounded bg-primary-regular px-4 py-2 text-white transition hover:bg-primary-lighter">
+                  {tech}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div
+          class="bg-primary-darkTransparent dark:bg-primary-lightTransparent flex flex-col gap-1 rounded p-2"
+        >
+          <div class="flex flex-wrap gap-2">
+            {
+              entry.data.tags?.map((tag) => (
+                <div class="cursor-default rounded bg-primary-regular px-4 py-2 text-white transition hover:bg-primary-lighter">
+                  {tag}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <div class="mb-4 max-w-prose">
         <Content />
         <div class="mt-8 flex gap-4">
           <a href={entry.data.url_repo} target="_blank" class={linkStyles}
@@ -54,7 +84,7 @@ const imageStyles =
         </div>
       </div>
 
-      <div class="flex w-full gap-8">
+      <div class="flex w-full gap-4">
         <div>
           {
             entry.data.img_main && (

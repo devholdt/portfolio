@@ -17,7 +17,7 @@ tech:
   - JavaScript
   - Sass
   - Bootstrap
-order: 2
+order: 3
 ---
 
 <p class="text-2xl">

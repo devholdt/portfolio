@@ -25,6 +25,8 @@ module.exports = {
           regular: "#005C61",
           dark: "#004245",
           darker: "#002A2C",
+          lightTransparent: "#01A8B120",
+          darkTransparent: "#005C6140",
         },
       },
     },

@@ -16,7 +16,7 @@ tags:
 tech:
   - React
   - styled-components
-order: 3
+order: 2
 ---
 
 <p class="text-2xl">
