@@ -25,7 +25,8 @@
   "dependencies": {
     "@astrojs/react": "^3.4.0",
     "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.9.2"
+    "astro": "^4.9.2",
+    "framer-motion": "^11.2.10"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.7",
