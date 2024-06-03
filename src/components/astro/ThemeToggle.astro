@@ -29,21 +29,41 @@ const iconStyles =
     constructor() {
       super();
 
-      const button = this.querySelector("button")!;
+      const button = this.querySelector("button");
 
-      const setTheme = (dark: boolean) => {
-        document.documentElement.classList[dark ? "add" : "remove"]("dark");
-        button.setAttribute("aria-pressed", String(dark));
+      const applyTheme = (dark: boolean) => {
+        const button = this.querySelector("button");
+        if (button) {
+          document.documentElement.classList[dark ? "add" : "remove"]("dark");
+          button.setAttribute("aria-pressed", String(dark));
+        }
       };
 
-      button.addEventListener("click", () => setTheme(!this.isDark()));
+      const getThemePreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme") === "dark";
+        }
+        return window.matchMedia("(prefers-color-scheme: dark)").matches;
+      };
 
-      setTheme(this.isDark());
+      if (button) {
+        button.addEventListener("click", () => {
+          const isDark = !getThemePreference();
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+          applyTheme(isDark);
+        });
+      }
+
+      applyTheme(getThemePreference());
     }
 
     isDark() {
       return document.documentElement.classList.contains("dark");
     }
   }
+
   customElements.define("theme-toggle", ThemeToggle);
 </script>

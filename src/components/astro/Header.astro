@@ -8,12 +8,12 @@ const { headerStyles, buttonDivStyles, backButton, heroTitle, heroTagline } =
 ---
 
 <header class={`container mx-auto flex flex-col px-4 ${headerStyles}`}>
-  <div class={`flex ${buttonDivStyles}`}>
+  <div class={`flex ${buttonDivStyles}`} transition:animate="none">
     {
       backButton && (
         <a
-          class="back-link p-2 text-gray-100 underline decoration-transparent underline-offset-4 duration-200 ease-in-out hover:decoration-current dark:text-primary-lightest"
           href="/"
+          class="back-link p-2 text-gray-100 underline decoration-transparent underline-offset-4 duration-200 ease-in-out hover:decoration-current dark:text-primary-lightest"
         >
           <Icon icon="arrow-left" />
           Back

@@ -28,20 +28,28 @@ const {
     href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
     rel="stylesheet"
   />
+
   <ViewTransitions />
 </head>
 
 <script is:inline>
+  const applyTheme = (isDark) => {
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+  };
+
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+      return localStorage.getItem("theme") === "dark";
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
   };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  const setThemePreference = () => {
+    const isDark = getThemePreference();
+    applyTheme(isDark);
+  };
+
+  setThemePreference();
 
   if (typeof localStorage !== "undefined") {
     const observer = new MutationObserver(() => {

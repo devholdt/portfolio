@@ -27,7 +27,7 @@ const linkStyles =
   "max-w-32 w-full h-10 rounded text-center flex items-center justify-center bg-primary-regular text-gray-500 hover:bg-primary-lighter transition";
 
 const imageStyles =
-  "rounded-md shadow-md object-cover object-top w-[400px] h-[400px] hover:scale-105 transition";
+  "rounded-md shadow-md object-cover object-top w-[400px] h-[320px] hover:scale-105 transition";
 ---
 
 <BaseLayout
@@ -73,44 +73,46 @@ const imageStyles =
           </div>
         </div>
       </div>
-      <div class="mb-12 max-w-prose">
-        <Content />
-        <div class="mt-8 flex gap-4">
-          <a href={entry.data.url_repo} target="_blank" class={linkStyles}
-            >Repo</a
-          >
-          <a href={entry.data.url_live} target="_blank" class={linkStyles}
-            >Live</a
-          >
+      <div>
+        <div class="mb-12 max-w-prose">
+          <Content />
+          <div class="mt-8 flex gap-4">
+            <a href={entry.data.url_repo} target="_blank" class={linkStyles}
+              >Repo</a
+            >
+            <a href={entry.data.url_live} target="_blank" class={linkStyles}
+              >Live</a
+            >
+          </div>
         </div>
-      </div>
 
-      <div class="flex w-full gap-4">
-        <div>
-          {
-            entry.data.img_main && (
-              <img
-                class={imageStyles}
-                src={entry.data.img_main}
-                alt={entry.data.img_main_alt}
-              />
-            )
-          }
-        </div>
-        <div>
-          {
-            entry.data.img_secondary && (
-              <img
-                class={imageStyles}
-                src={entry.data.img_secondary}
-                alt={entry.data.img_secondary_alt}
-              />
-            )
-          }
+        <div class="flex w-full gap-4">
+          <div>
+            {
+              entry.data.img_main && (
+                <img
+                  class={imageStyles}
+                  src={entry.data.img_main}
+                  alt={entry.data.img_main_alt}
+                />
+              )
+            }
+          </div>
+          <div>
+            {
+              entry.data.img_secondary && (
+                <img
+                  class={imageStyles}
+                  src={entry.data.img_secondary}
+                  alt={entry.data.img_secondary_alt}
+                />
+              )
+            }
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex gap-6"></div>
+    <div class="flex gap-6"></div>
+  </div>
 </BaseLayout>
