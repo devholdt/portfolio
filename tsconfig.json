@@ -7,7 +7,7 @@
     "paths": {
       "@astro/*": ["src/components/astro/*"],
       "@react/*": ["src/components/react/*"],
-      "@utils/*": ["src/components/utils/*"],
+      "@utils/*": ["src/lib/utils/*"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"]
     }
