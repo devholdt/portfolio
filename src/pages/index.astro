@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ProjectCard from "../components/astro/ProjectCard.astro";
-import Header from "../components/astro/Header.astro";
+import ProjectCard from "@astro/ProjectCard.astro";
+import Header from "@astro/Header.astro";
 
-import ProjectsMapWrapper from "../components/react/ProjectsMapWrapper";
+import ProjectsMapWrapper from "@react/ProjectsMapWrapper";
 
 const projects = await getCollection("projects");
 
