@@ -5,6 +5,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import Header from "../components/Header.astro";
 
+import ProjectsMapWrapper from "../components/ProjectsMapWrapper";
+
 const projects = await getCollection("projects");
 
 projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
@@ -44,9 +46,11 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
           {
             projects.map((project) => {
               return (
-                <li>
-                  <ProjectCard project={project} />
-                </li>
+                <ProjectsMapWrapper client:load>
+                  <li>
+                    <ProjectCard project={project} />
+                  </li>
+                </ProjectsMapWrapper>
               );
             })
           }
