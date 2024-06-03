@@ -5,11 +5,12 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "@astro/*": ["src/components/astro/*"],
-      "@react/*": ["src/components/react/*"],
+      "@components/*": ["src/components/astro/*"],
       "@utils/*": ["src/lib/utils/*"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

@@ -3,10 +3,8 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ProjectCard from "@astro/ProjectCard.astro";
-import Header from "@astro/Header.astro";
-
-import ProjectsMapWrapper from "@react/ProjectsMapWrapper";
+import ProjectCard from "@components/ProjectCard.astro";
+import Header from "@components/Header.astro";
 
 const projects = await getCollection("projects");
 
@@ -47,11 +45,9 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
           {
             projects.map((project) => {
               return (
-                <ProjectsMapWrapper client:load>
-                  <li>
-                    <ProjectCard project={project} />
-                  </li>
-                </ProjectsMapWrapper>
+                <li>
+                  <ProjectCard project={project} />
+                </li>
               );
             })
           }
