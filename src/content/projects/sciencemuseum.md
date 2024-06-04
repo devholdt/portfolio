@@ -19,7 +19,7 @@ tech:
 order: 5
 ---
 
-<p class="text-2xl">
+<p class="text-xl">
   A website for a fictional science museum with the focus of being informative, engaging and appealing to middle school pupils and their families.
 </p>
 
@@ -29,7 +29,7 @@ order: 5
 
 &nbsp;
 
-<p class="text-lg font-bold">
+<p class="text-lg font-[600]">
   Features
 </p>
 

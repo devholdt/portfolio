@@ -19,7 +19,7 @@ tech:
 order: 2
 ---
 
-<p class="text-2xl">
+<p class="text-xl">
     Allmart is an e-commerce store developed using React and styled-components, designed with seamlessness in mind. The application integrates with the Noroff Store API to display a variety of products and allows users to search and filter items in real-time. It also includes a fully functional shopping cart and checkout process. The responsive design ensures a consistent experience across devices.
 </p>
 
@@ -29,7 +29,7 @@ order: 2
 
 &nbsp;
 
-<p class="text-lg font-bold">
+<p class="text-lg font-[600]">
   Features
 </p>
 

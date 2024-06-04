@@ -20,7 +20,7 @@ tech:
 order: 1
 ---
 
-<p class="text-2xl">
+<p class="text-xl">
     Holidaze is an accommodation booking website built with Next.js, TypeScript, and Tailwind CSS. This highly performant and scalable application offers fast load times, robust type safety, and responsive design. It also includes features like server-side rendering and API routes with enhanced code reliability and maintainability.
 </p>
 
@@ -30,7 +30,7 @@ order: 1
 
 &nbsp;
 
-<p class="text-lg font-bold">
+<p class="text-lg font-[600]">
   Features
 </p>
 

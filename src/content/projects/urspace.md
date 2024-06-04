@@ -20,7 +20,7 @@ tech:
 order: 4
 ---
 
-<p class="text-2xl">
+<p class="text-xl">
   UrSpace is a post content based social media website where logged-in users can read posts or post content themselves. The site was made as part of the JavaScript 2 course assignment at Noroff University.
 </p>
 
@@ -30,7 +30,7 @@ order: 4
 
 &nbsp;
 
-<p class="text-lg font-bold">
+<p class="text-lg font-[600]">
   Features
 </p>
 

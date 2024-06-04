@@ -20,7 +20,7 @@ tech:
 order: 3
 ---
 
-<p class="text-2xl">
+<p class="text-xl">
   Bidify is an auction website that allows users to view, create, and bid on listings. This project was part of the Semester Project 2 course at Noroff University, utilizing the Noroff API for its functionality.
 </p>
 
@@ -30,7 +30,7 @@ order: 3
 
 &nbsp;
 
-<p class="text-lg font-bold">
+<p class="text-lg font-[600]">
   Features
 </p>
 
