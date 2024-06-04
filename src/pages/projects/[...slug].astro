@@ -1,6 +1,5 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import { Image } from "astro:assets";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
@@ -28,7 +27,7 @@ const linkStyles =
   "max-w-32 w-full h-10 rounded text-center flex items-center justify-center bg-primary-regular text-gray-500 hover:bg-primary-lighter transition";
 
 const imageStyles =
-  "rounded-md shadow-md object-cover object-top hover:scale-105 transition max-h-[380px] max-w-[400px]";
+  "rounded-md shadow-md object-cover object-top w-[400px] h-[320px] hover:scale-105 transition";
 ---
 
 <BaseLayout
@@ -91,16 +90,10 @@ const imageStyles =
           <div>
             {
               entry.data.img_main && (
-                <Image
+                <img
                   class={imageStyles}
                   src={entry.data.img_main}
-                  alt={
-                    entry.data.img_main_alt || `${entry.data.title} front page`
-                  }
-                  width="400"
-                  height="380"
-                  loading="lazy"
-                  decoding="async"
+                  alt={entry.data.img_main_alt}
                 />
               )
             }
@@ -108,16 +101,10 @@ const imageStyles =
           <div>
             {
               entry.data.img_secondary && (
-                <Image
+                <img
                   class={imageStyles}
                   src={entry.data.img_secondary}
-                  alt={
-                    entry.data.img_secondary_alt || `${entry.data.title} image`
-                  }
-                  width="400"
-                  height="380"
-                  loading="lazy"
-                  decoding="async"
+                  alt={entry.data.img_secondary_alt}
                 />
               )
             }
