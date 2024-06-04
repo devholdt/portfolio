@@ -12,12 +12,14 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<html lang="en" transition:animate="none">
+<html lang="en" transition:animate="none" class="h-full">
   <Head title={title} description={description} />
 
-  <body class="z-50 bg-gray-500 font-body antialiased dark:bg-gray-100">
+  <body
+    class="z-50 flex flex-col bg-gray-500 font-body antialiased dark:bg-gray-100"
+  >
     <main
-      class="m-2 flex flex-col border-2 border-primary-light pb-4 pt-2 sm:m-4 md:m-6 md:m-8 md:border-8 md:pb-8 md:pt-5"
+      class="m-2 flex grow flex-col border-2 border-primary-light pb-4 pt-2 sm:m-4 md:m-6 md:m-8 md:border-8 md:pb-8 md:pt-5"
     >
       <div transition:animate={fade({ duration: ".4s" })}>
         <slot />

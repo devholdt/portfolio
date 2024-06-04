@@ -7,6 +7,9 @@ module.exports = {
       heading: ["Rubik", "sans-serif"],
     },
     extend: {
+      screens: {
+        xs: "430px",
+      },
       colors: {
         gray: {
           100: "#222831",
