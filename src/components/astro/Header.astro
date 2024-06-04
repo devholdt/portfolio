@@ -4,7 +4,7 @@ import Icon from "@components/Icon.astro";
 import Hero from "@components/Hero.astro";
 
 const linkStyling =
-  "text-primary-darker dark:text-primary-lighter hover:text-primary-regular dark:hover:text-primary-lightest duration-200";
+  "text-primary-dark dark:text-primary-lighter hover:text-primary-light dark:hover:text-primary-lightest duration-200";
 
 const { headerStyles, buttonDivStyles, backButton, heroTitle, heroTagline } =
   Astro.props;
@@ -28,7 +28,7 @@ const { headerStyles, buttonDivStyles, backButton, heroTitle, heroTagline } =
         )
       }
     </div>
-    <div class="xs:flex hidden flex-1 items-center gap-2">
+    <div class="xs:flex hidden flex-1 gap-2">
       <p>
         <a
           class={linkStyling}
