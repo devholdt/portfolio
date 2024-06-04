@@ -1,5 +1,5 @@
 ---
-import { slide } from "astro:transitions";
+import { fade } from "astro:transitions";
 
 import Head from "@components/Head.astro";
 import Footer from "@components/Footer.astro";
@@ -16,16 +16,14 @@ const { title, description } = Astro.props;
   <Head title={title} description={description} />
 
   <body class="z-50 bg-gray-500 font-body antialiased dark:bg-gray-100">
-    <div>
-      <main
-        class="m-2 flex flex-col border-2 border-primary-light pb-4 pt-2 sm:m-4 md:m-6 md:m-8 md:border-8 md:pb-8 md:pt-5"
-      >
-        <div transition:animate={slide({ duration: ".8s" })}>
-          <slot />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <main
+      class="m-2 flex flex-col border-2 border-primary-light pb-4 pt-2 sm:m-4 md:m-6 md:m-8 md:border-8 md:pb-8 md:pt-5"
+    >
+      <div transition:animate={fade({ duration: ".4s" })}>
+        <slot />
+      </div>
+    </main>
+    <Footer />
 
     <script>
       if (
