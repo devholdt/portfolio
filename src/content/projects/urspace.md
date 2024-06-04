@@ -1,8 +1,8 @@
 ---
 title: "UrSpace"
-img_main: /assets/urspace/urspace_feed.jpg
+img_main: /src/content/assets/urspace/urspace_feed.jpg
 img_main_alt: UrSpace front page
-img_secondary: /assets/urspace/urspace_profile.jpg
+img_secondary: /src/content/assets/urspace/urspace_profile.jpg
 img_secondary_alt: UrSpace profile page
 description: |
   A simple social media website with frontend CRUD functionality for post content and user profiles using the Noroff API
