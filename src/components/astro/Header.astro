@@ -3,24 +3,64 @@ import ThemeToggle from "@components/ThemeToggle.astro";
 import Icon from "@components/Icon.astro";
 import Hero from "@components/Hero.astro";
 
+const linkStyling =
+  "text-primary-darker dark:text-primary-lighter hover:text-primary-regular dark:hover:text-primary-lightest duration-200";
+
 const { headerStyles, buttonDivStyles, backButton, heroTitle, heroTagline } =
   Astro.props;
 ---
 
 <header class={`container mx-auto flex flex-col px-4 ${headerStyles}`}>
-  <div class={`flex ${buttonDivStyles}`} transition:animate="none">
-    {
-      backButton && (
+  <div
+    class={`flex justify-between mb-4 ${buttonDivStyles}`}
+    transition:animate="none"
+  >
+    <div class="flex-1">
+      {
+        backButton && (
+          <a
+            href="/"
+            class="back-link text-gray-100 underline decoration-transparent underline-offset-4 duration-200 ease-in-out hover:decoration-current dark:text-primary-lightest"
+          >
+            <Icon icon="arrow-left" />
+            Back
+          </a>
+        )
+      }
+    </div>
+    <div class="xs:flex hidden flex-1 items-center gap-2">
+      <p>
         <a
-          href="/"
-          class="back-link p-2 text-gray-100 underline decoration-transparent underline-offset-4 duration-200 ease-in-out hover:decoration-current dark:text-primary-lightest"
+          class={linkStyling}
+          aria-label="github"
+          href="https://github.com/devholdt"
+          target="_blank"
         >
-          <Icon icon="arrow-left" />
-          Back
+          <Icon icon="github-logo" width="24" height="24" />
         </a>
-      )
-    }
-    <div class="theme-toggle mb-8">
+      </p>
+      <p>
+        <a
+          class={linkStyling}
+          aria-label="linkedin"
+          href="https://www.linkedin.com/in/mathias-herholdt-b5a5bb204/"
+          target="_blank"
+        >
+          <Icon icon="linkedin-logo" width="24" height="24" />
+        </a>
+      </p>
+      <p>
+        <a
+          class={linkStyling}
+          aria-label="twitter"
+          href="https://twitter.com/harboldtt"
+          target="_blank"
+        >
+          <Icon icon="twitter-logo" width="24" height="24" />
+        </a>
+      </p>
+    </div>
+    <div class="theme-toggle">
       <ThemeToggle />
     </div>
   </div>
