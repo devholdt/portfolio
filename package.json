@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/devholdt/portfolio#readme",
   "dependencies": {
+    "@astrojs/cloudflare": "^10.2.6",
     "@astrojs/react": "^3.4.0",
     "@astrojs/tailwind": "^5.1.0",
     "@types/react": "^18.3.3",
