@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import { AstroFont } from "astro-font";
 
 import "@styles/global.css";
 
@@ -24,9 +25,30 @@ const {
   <link rel="icon" type="image/svg" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-    rel="stylesheet"
+
+  <AstroFont
+    config={[
+      {
+        src: [],
+        name: "Public Sans",
+        googleFontsURL:
+          "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+        preload: true,
+        display: "swap",
+        selector: "body",
+        fallback: "sans-serif",
+      },
+      {
+        src: [],
+        name: "Rubik",
+        googleFontsURL:
+          "https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap",
+        preload: true,
+        display: "swap",
+        selector: "body",
+        fallback: "sans-serif",
+      },
+    ]}
   />
 
   <ViewTransitions />
