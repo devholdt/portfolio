@@ -52,7 +52,7 @@ const imageStyles =
           <div class="flex flex-wrap gap-2">
             {
               entry.data.tech?.map((tech) => (
-                <div class="cursor-default rounded bg-primary-regular px-2 py-1 text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
+                <div class="cursor-default rounded bg-primary-regular px-2 py-1 font-[200] text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
                   {tech}
                 </div>
               ))
@@ -65,7 +65,7 @@ const imageStyles =
           <div class="flex flex-wrap gap-2">
             {
               entry.data.tags?.map((tag) => (
-                <div class="cursor-default rounded bg-primary-regular px-2 py-1 text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
+                <div class="cursor-default rounded bg-primary-regular px-2 py-1 font-[200] text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
                   {tag}
                 </div>
               ))
@@ -74,9 +74,9 @@ const imageStyles =
         </div>
       </div>
       <div>
-        <div class="mb-12 max-w-prose">
+        <div class="mb-12 max-w-prose font-[400] dark:font-[100]">
           <Content />
-          <div class="mt-8 flex gap-4">
+          <div class="mt-8 flex gap-4 font-[200]">
             <a href={entry.data.url_repo} target="_blank" class={linkStyles}
               >Repo</a
             >
