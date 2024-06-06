@@ -45,14 +45,14 @@ const imageStyles =
     <div
       class="content flex flex-col flex-wrap text-gray-100 dark:text-gray-500"
     >
-      <div class="my-4 flex flex-wrap gap-0 text-sm sm:gap-1 md:gap-2">
+      <div class="my-3 flex flex-wrap gap-0 text-sm sm:gap-1 md:gap-2">
         <div
-          class="sm:bg-primary-darkTransparent sm:dark:bg-primary-lightTransparent gap-1 rounded p-1 md:p-2"
+          class="gap-1 rounded p-1 sm:bg-primary-darkTransparent sm:dark:bg-primary-lightTransparent"
         >
           <div class="flex flex-wrap gap-2">
             {
               entry.data.tech?.map((tech) => (
-                <div class="cursor-default rounded bg-primary-regular px-2 py-1 font-[200] text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
+                <div class="cursor-default rounded bg-primary-regular px-3 py-1 font-[200] tracking-wider text-white transition hover:bg-primary-lighter">
                   {tech}
                 </div>
               ))
@@ -60,12 +60,12 @@ const imageStyles =
           </div>
         </div>
         <div
-          class="sm:bg-primary-darkTransparent sm:dark:bg-primary-lightTransparent gap-1 rounded p-1 md:p-2"
+          class="gap-1 rounded p-1 sm:bg-primary-darkTransparent sm:dark:bg-primary-lightTransparent"
         >
           <div class="flex flex-wrap gap-2">
             {
               entry.data.tags?.map((tag) => (
-                <div class="cursor-default rounded bg-primary-regular px-2 py-1 font-[200] text-white transition hover:bg-primary-lighter md:px-4 md:py-2">
+                <div class="cursor-default rounded bg-primary-regular px-3 py-1 font-[200] tracking-wider text-white transition hover:bg-primary-lighter">
                   {tag}
                 </div>
               ))
