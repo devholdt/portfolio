@@ -5,13 +5,13 @@ img_main_alt: Holidaze front page
 img_secondary: /assets/holidaze/holidaze-venue-page.webp
 img_secondary_alt: Holidaze venue page
 description: |
-  A Next.js application built with TypeScript and Tailwind CSS. This project, an accomodation booking website, was created as my final project exam at Noroff.
+  A Next.js application built with TypeScript and Tailwind CSS. This project, an accommodation booking website, was created as my final project exam at Noroff.
 tagline: Be the curator of someones next adventure
 url_repo: https://github.com/devholdt/holidaze-pe2
 url_live: https://holidaze-nextjs.netlify.app/
 tags:
   - Website
-  - Accomodation Booking
+  - Accommodation Booking
   - Full-stack
 tech:
   - Next.js
