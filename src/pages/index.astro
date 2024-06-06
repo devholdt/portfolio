@@ -20,6 +20,7 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
       backButton={false}
       heroTitle="Hello, I'm Mathias!"
       heroTagline="Frontend developer"
+      headerStyles="text-center sm:text-left"
     />
 
     <div
@@ -35,9 +36,9 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
     <hr class="container mx-auto border-shade" />
 
     <div class="container mx-auto mt-20 gap-20 px-4 lg:gap-48">
-      <section class="section with-background with-cta">
+      <section class="with-background with-cta">
         <div
-          class="section-header mb-4 flex items-end justify-between text-center md:text-left"
+          class="mb-4 flex items-end justify-between text-center md:text-left"
         >
           <h3
             class="font-heading text-3xl font-[300] text-gray-100 dark:text-gray-500 md:text-5xl"
@@ -46,7 +47,9 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
           </h3>
           <LayoutToggle />
         </div>
-        <div class="grid:grid grid:grid-cols-2 list:flex list:flex-col gap-2">
+        <div
+          class="grid:grid grid:grid-cols-1 md:grid:grid-cols-2 list:flex list:flex-col lg:grid:grid-cols-3 gap-2"
+        >
           {
             projects.map((project) => {
               return <ProjectCard project={project} />;

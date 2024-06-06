@@ -11,7 +11,7 @@ url_repo: https://github.com/devholdt/holidaze-pe2
 url_live: https://holidaze-nextjs.netlify.app/
 tags:
   - Website
-  - Accommodation Booking
+  - Booking
   - Full-stack
 tech:
   - Next.js
