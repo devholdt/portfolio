@@ -12,7 +12,7 @@ url_live: https://tbgsciencemuseum.netlify.app/
 tags:
   - Website
   - Museum
-  - Family
+  - HTML/CSS
 tech:
   - HTML
   - CSS
