@@ -56,31 +56,44 @@ const {
 
 <script is:inline>
   const applyTheme = (isDark) => {
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    if (document.documentElement) {
+      document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    }
   };
 
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme") === "dark";
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+    return false;
   };
 
   const setThemePreference = () => {
     const isDark = getThemePreference();
-    applyTheme(isDark);
+    if (isDark !== undefined) {
+      applyTheme(isDark);
+    }
   };
 
   setThemePreference();
 
   if (typeof localStorage !== "undefined") {
     const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
+      const isDark = document.documentElement
+        ? document.documentElement.classList.contains("dark")
+        : false;
+      if (isDark !== undefined) {
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      }
     });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
+    if (document.documentElement) {
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"],
+      });
+    }
   }
 </script>

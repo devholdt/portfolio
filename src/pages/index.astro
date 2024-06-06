@@ -6,6 +6,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import ProjectCard from "@components/ProjectCard.astro";
 import Header from "@components/Header.astro";
 
+import LayoutToggle from "@components/LayoutToggle.astro";
+
 const projects = await getCollection("projects");
 
 projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
@@ -16,7 +18,7 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
     <Header
       buttonDivStyles="justify-end"
       backButton={false}
-      heroTitle="Hello, my name is Mathias"
+      heroTitle="Hello, I'm Mathias!"
       heroTagline="Frontend developer"
     />
 
@@ -30,28 +32,27 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
       </p>
     </div>
 
-    <hr />
+    <hr class="container mx-auto border-shade" />
 
     <div class="container mx-auto mt-20 gap-20 px-4 lg:gap-48">
       <section class="section with-background with-cta">
-        <div class="section-header mb-4 text-center md:text-left">
+        <div
+          class="section-header mb-4 flex items-end justify-between text-center md:text-left"
+        >
           <h3
             class="font-heading text-3xl font-[300] text-gray-100 dark:text-gray-500 md:text-5xl"
           >
             Projects
           </h3>
+          <LayoutToggle />
         </div>
-        <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div class="grid:grid grid:grid-cols-2 list:flex list:flex-col gap-2">
           {
             projects.map((project) => {
-              return (
-                <li>
-                  <ProjectCard project={project} />
-                </li>
-              );
+              return <ProjectCard project={project} />;
             })
           }
-        </ul>
+        </div>
       </section>
     </div>
   </div>

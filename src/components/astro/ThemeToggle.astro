@@ -2,16 +2,17 @@
 import Icon from "@components/Icon.astro";
 
 const iconStyles =
-  "icon flex z-10 relative p-2 w-8 h-8 text-base text-gray-300 transition-transform-color";
+  "flex z-10 relative p-2 w-8 h-8 text-base text-gray-300 transition-transform-color";
 ---
 
 <theme-toggle>
   <button
+    id="themeToggle"
     class="relative flex rounded-full bg-gray-400 shadow-inner dark:bg-gray-200"
   >
     <span
-      class="theme-name absolute m-[-1px] h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 clip-rect"
-      >Dark theme</span
+      class="absolute m-[-1px] h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 clip-rect"
+      >Toggle theme</span
     >
     <span
       class={`light ${iconStyles} before-light before:bg-primary-dark dark:before:bg-primary-dark`}
@@ -29,13 +30,12 @@ const iconStyles =
     constructor() {
       super();
 
-      const button = this.querySelector("button");
+      const button = this.querySelector("#themeToggle");
 
-      const applyTheme = (dark: boolean) => {
-        const button = this.querySelector("button");
+      const applyTheme = (isDark: boolean) => {
         if (button) {
-          document.documentElement.classList[dark ? "add" : "remove"]("dark");
-          button.setAttribute("aria-pressed", String(dark));
+          document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+          button.setAttribute("aria-pressed", String(isDark));
         }
       };
 

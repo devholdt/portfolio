@@ -1,0 +1,68 @@
+---
+import Icon from "@components/Icon.astro";
+
+const iconStyles =
+  "flex z-10 relative p-2 w-8 h-8 text-base text-gray-300 transition-transform-color";
+---
+
+<layout-toggle>
+  <button
+    id="layoutToggle"
+    class="relative flex rounded-full bg-gray-400 shadow-inner dark:bg-gray-200"
+  >
+    <span
+      class="absolute m-[-1px] h-px w-px overflow-hidden whitespace-nowrap border-0 p-0 clip-rect"
+      >Toggle layout</span
+    >
+    <span
+      class={`list ${iconStyles} before-list before:bg-primary-dark dark:before:bg-primary-dark`}
+    >
+      <Icon icon="list" />
+    </span>
+    <span class={`grid ${iconStyles}`}> <Icon icon="grid" /> </span>
+  </button>
+</layout-toggle>
+
+<script>
+  class LayoutToggle extends HTMLElement {
+    constructor() {
+      super();
+
+      const button = this.querySelector("#layoutToggle");
+
+      const applyLayout = (isGrid) => {
+        if (button) {
+          document.documentElement.classList.toggle("grid", isGrid);
+          document.documentElement.classList.toggle("list", !isGrid);
+          button.setAttribute("aria-pressed", String(isGrid));
+        }
+      };
+
+      const getLayoutPreference = () => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("layout")
+        ) {
+          return localStorage.getItem("layout") === "grid";
+        }
+        return false;
+      };
+
+      if (button) {
+        button.addEventListener("click", () => {
+          const isGrid = !getLayoutPreference();
+          localStorage.setItem("layout", isGrid ? "grid" : "list");
+          applyLayout(isGrid);
+        });
+      }
+
+      applyLayout(getLayoutPreference());
+    }
+
+    isGrid() {
+      return document.documentElement.classList.contains("grid");
+    }
+  }
+
+  customElements.define("layout-toggle", LayoutToggle);
+</script>

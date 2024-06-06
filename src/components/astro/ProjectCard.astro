@@ -9,19 +9,21 @@ const { data, slug } = Astro.props.project;
 ---
 
 <a
-  class="card group relative grid h-48 overflow-hidden rounded-lg font-heading text-lg font-normal shadow-md duration-200 ease-in-out before:absolute before:left-0 before:top-0 before:h-full before:w-full before:bg-shade before:opacity-100 before:transition before:content-[''] hover:scale-105 hover:shadow-xl before:hover:opacity-0 md:h-60"
   href={`/projects/${slug}`}
+  class="grid:h-[120px] list:items-center grid:flex-col flex justify-between rounded-sm border border-shade bg-white px-4 py-2 shadow-sm transition hover:bg-gray-400 dark:border-shade dark:bg-shade dark:text-gray-400 dark:shadow-md dark:hover:border-gray-300"
 >
-  <span
-    class="title z-10 m-2 bg-gray-400 px-4 py-2 text-gray-100 shadow-md transition duration-200 ease-in-out grid-area-title group-hover:opacity-0 dark:bg-gray-100 dark:text-gray-500"
+  <p
+    class="list:text-lg grid:text-xl font-[300] tracking-wider dark:font-[200]"
   >
     {data.title}
-  </span>
-  <img
-    class="h-full w-full object-cover grid-area-image"
-    src={data.img_main}
-    alt={data.img_main_alt || ""}
-    loading="lazy"
-    decoding="async"
-  />
+  </p>
+  <div class="flex gap-1">
+    {
+      data.tags?.map((tag) => (
+        <p class="h-fit rounded bg-primary-regular px-2 py-1 text-sm tracking-wider text-white transition hover:bg-primary-lighter">
+          {tag}
+        </p>
+      ))
+    }
+  </div>
 </a>
