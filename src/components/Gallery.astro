@@ -1,40 +1,44 @@
 ---
-import { Image } from "astro:assets";
+import fs from "node:fs";
 
-const { main_url, main_alt, secondary_url, secondary_alt } = Astro.props;
+interface Props {
+  gallery: string;
+  dir: string;
+  alt: string;
+}
 
-const imageStyles =
-  "rounded-md shadow-md object-cover object-top max-w-[600px] max-h-[400px] hover:scale-[1.05] transition";
+const { gallery, dir, alt } = Astro.props;
+
+const images = fs.readdirSync("src/content/projects/assets/" + dir + "/");
 ---
 
-<div class="pswp-gallery flex w-full gap-5" id="projectGallery">
-  <a
-    href={main_url}
-    data-pswp-width="2500"
-    data-pswp-height="1400"
-    target="_blank"
-  >
-    <Image src={main_url} alt={main_alt} class={imageStyles} />
-  </a>
-  <a
-    href={secondary_url}
-    data-pswp-width="2500"
-    data-pswp-height="1400"
-    target="_blank"
-  >
-    <Image src={secondary_url} alt={secondary_alt} class={imageStyles} />
-  </a>
+<div class="flex w-full flex-wrap gap-4">
+  {
+    images.map((image, id) => (
+      <>
+        <a
+          href={"#" + gallery + "-" + id}
+          id={"i" + gallery + "-" + id}
+          class="scroll-mt-20"
+        >
+          <img
+            src={"/assets/" + dir + "/" + image}
+            class="aspect-square h-full max-h-[240px] w-full rounded-md border border-shade object-cover object-top shadow transition hover:scale-105 dark:border-gray-200"
+            {alt}
+          />
+        </a>
+        <a
+          href={"#i" + gallery + "-" + id}
+          class="fixed inset-0 hidden items-center justify-center bg-black/80 p-4 target:flex sm:p-6"
+          id={gallery + "-" + id}
+        >
+          <img
+            src={"/assets/" + dir + "/" + image}
+            class="h-full w-full object-contain object-top"
+            {alt}
+          />
+        </a>
+      </>
+    ))
+  }
 </div>
-
-<script>
-  import PhotoSwipeLightbox from "photoswipe/lightbox";
-  import "photoswipe/style.css";
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: "#projectGallery",
-    children: "a",
-    pswpModule: () => import("photoswipe"),
-  });
-
-  lightbox.init();
-</script>

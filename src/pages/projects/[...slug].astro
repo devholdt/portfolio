@@ -87,11 +87,18 @@ const linkStyles =
         </div>
 
         <Gallery
+          gallery={`${project.slug} gallery`}
+          dir={project.slug}
+          alt={`${project.data.title} page`}
+        />
+
+        <!-- <Gallery
+          dir={project.slug}
           main_url={project.data.img_main}
           main_alt={project.data.img_main_alt}
           secondary_url={project.data.img_secondary}
           secondary_alt={project.data.img_secondary_alt}
-        />
+        /> -->
       </div>
     </div>
 
