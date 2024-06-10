@@ -20,6 +20,7 @@ const images = fs.readdirSync("src/content/projects/assets/" + dir + "/");
           href={"#" + title + "-" + (id + 1)}
           id={"i" + title + "-" + (id + 1)}
           class="scroll-mt-20"
+          data-astro-history="replace"
         >
           <img
             src={"/assets/" + dir + "/" + image}
@@ -31,6 +32,7 @@ const images = fs.readdirSync("src/content/projects/assets/" + dir + "/");
           href={"#" + dir}
           class="fixed inset-0 hidden items-center justify-center bg-black/80 p-4 target:flex sm:p-6"
           id={title + "-" + (id + 1)}
+          data-astro-history="replace"
         >
           <img
             src={"/assets/" + dir + "/" + image}
