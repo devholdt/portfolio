@@ -1,9 +1,9 @@
 ---
 title: Allmart
-img_main: /assets/allmart/allmart-home.jpg
+img_main: ./assets/allmart/allmart-home.jpg
 img_main_alt: Allmart front page
-img_secondary: /assets/allmart/allmart-product.jpg
-img_secondary_alt: allmart product page
+img_secondary: ./assets/allmart/allmart-product.jpg
+img_secondary_alt: Allmart product page
 description: |
   A responsive e-commerce web application built with React, featuring a seamless shopping experience from browsing products to checkout.
 tagline: Everything you need

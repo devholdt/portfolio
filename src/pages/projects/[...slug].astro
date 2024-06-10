@@ -3,21 +3,26 @@ import { type CollectionEntry, getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
+import Gallery from "@components/Gallery.astro";
+import ExternalScripts from "@components/ExternalScripts.astro";
 
 interface Props {
-  entry: CollectionEntry<"projects">;
+  project: CollectionEntry<"projects">;
 }
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
-  return projects.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+
+  return projects.map((project) => {
+    return {
+      params: { slug: project.slug },
+      props: { project },
+    };
+  });
 }
 
-const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { project } = Astro.props;
+const { Content } = await project.render();
 
 const headerStyles =
   "border-b border-primary-regular px-4 pb-10 dark:border-primary-lighter";
@@ -25,20 +30,20 @@ const headerStyles =
 const linkStyles =
   "max-w-32 w-full h-10 rounded text-center flex items-center justify-center bg-primary-regular text-gray-500 hover:bg-primary-lighter transition";
 
-const imageStyles =
-  "rounded-md shadow-md object-cover object-top w-[400px] h-[320px] hover:scale-105 transition";
+let title = "Image title";
+let description = "Image description";
 ---
 
 <BaseLayout
-  title={`Mathias B. Herholdt | ${entry.data.title}`}
-  description={entry.data.description}
+  title={`Mathias B. Herholdt | ${project.data.title}`}
+  description={project.data.description}
 >
   <Header
     headerStyles={headerStyles}
     buttonDivStyles="justify-between"
     backButton={true}
-    heroTitle={entry.data.title}
-    heroTagline={entry.data.tagline}
+    heroTitle={project.data.title}
+    heroTagline={project.data.tagline}
   />
   <div class="container mx-auto px-4">
     <div
@@ -50,7 +55,7 @@ const imageStyles =
         >
           <div class="flex flex-wrap gap-2">
             {
-              entry.data.tech?.map((tech) => (
+              project.data.tech?.map((tech) => (
                 <div class="cursor-default rounded bg-primary-regular px-3 py-1 font-[200] tracking-wider text-white transition hover:bg-primary-lighter">
                   {tech}
                 </div>
@@ -63,7 +68,7 @@ const imageStyles =
         >
           <div class="flex flex-wrap gap-2">
             {
-              entry.data.tags?.map((tag) => (
+              project.data.tags?.map((tag) => (
                 <div class="cursor-default rounded bg-primary-regular px-3 py-1 font-[200] tracking-wider text-white transition hover:bg-primary-lighter">
                   {tag}
                 </div>
@@ -76,39 +81,21 @@ const imageStyles =
         <div class="mb-12 max-w-prose font-[400] dark:font-[100]">
           <Content />
           <div class="mt-8 flex gap-4 font-[200]">
-            <a href={entry.data.url_repo} target="_blank" class={linkStyles}
+            <a href={project.data.url_repo} target="_blank" class={linkStyles}
               >Repo</a
             >
-            <a href={entry.data.url_live} target="_blank" class={linkStyles}
+            <a href={project.data.url_live} target="_blank" class={linkStyles}
               >Live</a
             >
           </div>
         </div>
 
-        <div class="flex w-full gap-4">
-          <div>
-            {
-              entry.data.img_main && (
-                <img
-                  class={imageStyles}
-                  src={entry.data.img_main}
-                  alt={entry.data.img_main_alt}
-                />
-              )
-            }
-          </div>
-          <div>
-            {
-              entry.data.img_secondary && (
-                <img
-                  class={imageStyles}
-                  src={entry.data.img_secondary}
-                  alt={entry.data.img_secondary_alt}
-                />
-              )
-            }
-          </div>
-        </div>
+        <Gallery
+          main_url={project.data.img_main}
+          main_alt={project.data.img_main_alt}
+          secondary_url={project.data.img_secondary}
+          secondary_alt={project.data.img_secondary_alt}
+        />
       </div>
     </div>
 

@@ -1,8 +1,8 @@
 ---
 title: Bidify
-img_main: /assets/bidify/bidify_home.jpg
+img_main: ./assets/bidify/bidify_home.jpg
 img_main_alt: bidify front page
-img_secondary: /assets/bidify/bidify_profile.jpg
+img_secondary: ./assets/bidify/bidify_profile.jpg
 img_secondary_alt: bidify profile page
 description: |
   An auction website where users can view, create and bid on listings using an API to fetch and recieve data.

@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+const { main_url, main_alt, secondary_url, secondary_alt } = Astro.props;
+
+const imageStyles =
+  "rounded-md shadow-md object-cover object-top max-w-[600px] max-h-[400px] hover:scale-[1.05] transition";
+---
+
+<div class="pswp-gallery flex w-full gap-5" id="projectGallery">
+  <a
+    href={main_url}
+    data-pswp-width="2500"
+    data-pswp-height="1400"
+    target="_blank"
+  >
+    <Image src={main_url} alt={main_alt} class={imageStyles} />
+  </a>
+  <a
+    href={secondary_url}
+    data-pswp-width="2500"
+    data-pswp-height="1400"
+    target="_blank"
+  >
+    <Image src={secondary_url} alt={secondary_alt} class={imageStyles} />
+  </a>
+</div>
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  import "photoswipe/style.css";
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#projectGallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+
+  lightbox.init();
+</script>
