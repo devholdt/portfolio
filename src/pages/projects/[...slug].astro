@@ -4,7 +4,6 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Header from "@components/Header.astro";
 import Gallery from "@components/Gallery.astro";
-import ExternalScripts from "@components/ExternalScripts.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -29,9 +28,6 @@ const headerStyles =
 
 const linkStyles =
   "max-w-32 w-full h-10 rounded text-center flex items-center justify-center bg-primary-regular text-gray-500 hover:bg-primary-lighter transition";
-
-let title = "Image title";
-let description = "Image description";
 ---
 
 <BaseLayout
