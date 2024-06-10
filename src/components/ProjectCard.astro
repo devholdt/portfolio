@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import Icon from "src/components/Icon.astro";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { data, slug } = Astro.props.project;
+---
+
+<a
+  href={`/projects/${slug}`}
+  class="flex justify-between rounded-sm border border-shade bg-white px-2 py-2 shadow-sm transition hover:bg-gray-400 grid:min-h-[150px] grid:flex-col list:items-center dark:border-shade dark:bg-shade dark:text-gray-400 dark:shadow-md dark:hover:border-gray-300 sm:px-4"
+>
+  <div class="grid:mb-4">
+    <p
+      class="font-[300] tracking-wider grid:text-xl list:text-base dark:font-[200] sm:grid:text-2xl sm:list:text-lg"
+    >
+      {data.title}
+    </p>
+    <p class="flex text-sm font-[200] list:hidden dark:text-gray-300">
+      {data.description}
+    </p>
+  </div>
+  <div
+    class="flex-wrap gap-1 grid:flex list:ms-4 list:flex list:items-center sm:grid:justify-end"
+  >
+    {
+      data.tags?.map((tag) => (
+        <p class="h-fit text-nowrap rounded bg-primary-regular px-2 py-1 text-sm tracking-wider text-white transition hover:bg-primary-lighter list:hidden">
+          {tag}
+        </p>
+      ))
+    }
+    <div class="ms-4 text-primary-regular grid:hidden">
+      <Icon icon="chevron-right" />
+    </div>
+  </div>
+</a>

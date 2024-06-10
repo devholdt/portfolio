@@ -1,7 +1,7 @@
 ---
-import ThemeToggle from "@components/ThemeToggle.astro";
-import Icon from "@components/Icon.astro";
-import Hero from "@components/Hero.astro";
+import ThemeToggle from "src/components/ThemeToggle.astro";
+import Icon from "src/components/Icon.astro";
+import Hero from "src/components/Hero.astro";
 
 const linkStyling =
   "text-primary-dark dark:text-primary-lighter hover:text-primary-light dark:hover:text-primary-lightest duration-200";
@@ -28,7 +28,7 @@ const { headerStyles, buttonDivStyles, backButton, heroTitle, heroTagline } =
         )
       }
     </div>
-    <div class="xs:flex hidden flex-1 gap-2">
+    <div class="hidden flex-1 gap-2 xs:flex">
       <p>
         <a
           class={linkStyling}

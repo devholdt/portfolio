@@ -1,6 +1,6 @@
 ---
-import Icon from "@components/Icon.astro";
-import CallToAction from "@components/CallToAction.astro";
+import Icon from "src/components/Icon.astro";
+import CallToAction from "src/components/CallToAction.astro";
 
 const currentYear = new Date().getFullYear();
 const linkStyling =
@@ -10,7 +10,7 @@ const linkStyling =
 <footer
   class="flex items-end justify-between border-t bg-shade p-4 text-gray-100 dark:bg-shade dark:text-gray-400"
 >
-  <div class="xs:w-auto flex w-full flex-col">
+  <div class="flex w-full flex-col xs:w-auto">
     <div class="text-left">
       <h3 class="font-semibold">Contact</h3>
       <p>mathias@herholdt.dev</p>
@@ -23,7 +23,7 @@ const linkStyling =
     </div>
   </div>
 
-  <div class="xs:flex hidden flex-col sm:justify-between">
+  <div class="hidden flex-col xs:flex sm:justify-between">
     <p class="text-sm font-light">
       Made with 💜 in <a
         href="https://astro.build"

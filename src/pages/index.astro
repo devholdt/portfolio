@@ -3,10 +3,10 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ProjectCard from "@components/ProjectCard.astro";
-import Header from "@components/Header.astro";
+import ProjectCard from "src/components/ProjectCard.astro";
+import Header from "src/components/Header.astro";
 
-import LayoutToggle from "@components/LayoutToggle.astro";
+import LayoutToggle from "src/components/LayoutToggle.astro";
 
 const projects = await getCollection("projects");
 
@@ -48,7 +48,7 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
           <LayoutToggle />
         </div>
         <div
-          class="grid:grid grid:grid-cols-1 md:grid:grid-cols-2 list:flex list:flex-col lg:grid:grid-cols-3 gap-2"
+          class="gap-2 grid:grid grid:grid-cols-1 list:flex list:flex-col md:grid:grid-cols-2 lg:grid:grid-cols-3"
         >
           {
             projects.map((project) => {
