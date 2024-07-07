@@ -24,7 +24,7 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
     />
 
     <div
-      class="container mx-auto my-20 px-4 text-lg text-gray-200 dark:text-gray-500 md:text-2xl"
+      class="container mx-auto mt-20 px-4 text-lg text-gray-200 dark:text-gray-500 md:text-2xl"
     >
       <p class="max-w-prose font-[150] dark:font-[100]">
         I am a frontend developer from Norway with a passion for creating
@@ -33,30 +33,26 @@ projects.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
       </p>
     </div>
 
-    <hr class="container mx-auto border-shade" />
+    <hr class="container mx-auto my-20 border-shade" />
 
     <div class="container mx-auto mt-20 gap-20 px-4 lg:gap-48">
-      <section class="with-background with-cta">
-        <div
-          class="mb-4 flex items-end justify-between text-center md:text-left"
+      <div class="mb-4 flex items-end justify-between text-center md:text-left">
+        <h3
+          class="font-heading text-3xl font-[300] text-gray-100 dark:text-gray-500 md:text-5xl"
         >
-          <h3
-            class="font-heading text-3xl font-[300] text-gray-100 dark:text-gray-500 md:text-5xl"
-          >
-            Projects
-          </h3>
-          <LayoutToggle />
-        </div>
-        <div
-          class="grid:grid grid:grid-cols-1 md:grid:grid-cols-2 list:flex list:flex-col lg:grid:grid-cols-3 gap-2"
-        >
-          {
-            projects.map((project) => {
-              return <ProjectCard project={project} />;
-            })
-          }
-        </div>
-      </section>
+          Projects
+        </h3>
+        <LayoutToggle />
+      </div>
+      <div
+        class="gap-2 grid:grid grid:grid-cols-1 list:flex list:flex-col md:grid:grid-cols-2 lg:grid:grid-cols-3"
+      >
+        {
+          projects.map((project) => {
+            return <ProjectCard project={project} />;
+          })
+        }
+      </div>
     </div>
   </div>
 </BaseLayout>

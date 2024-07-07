@@ -3,27 +3,29 @@ import Icon from "@components/Icon.astro";
 import CallToAction from "@components/CallToAction.astro";
 
 const currentYear = new Date().getFullYear();
-const linkStyling =
-  "text-sm text-gray-200 dark:text-primary-lighter underline decoration-transparent underline-offset-2 hover:decoration-current duration-200";
 ---
 
 <footer
   class="flex items-end justify-between border-t bg-shade p-4 text-gray-100 dark:bg-shade dark:text-gray-400"
 >
-  <div class="xs:w-auto flex w-full flex-col">
+  <div class="flex w-full flex-col xs:w-auto">
     <div class="text-left">
       <h3 class="font-semibold">Contact</h3>
-      <p>mathias@herholdt.dev</p>
+
+      <div class="my-2">
+        <p class="text-sm font-extralight text-gray-100 dark:text-gray-300">
+          Send me an email:
+        </p>
+        <p>mathias@herholdt.dev</p>
+      </div>
     </div>
-    <div class="mt-2">
-      <CallToAction href="mailto:mathias@herholdt.dev">
-        Message me
-        <Icon icon="paper-plane-tilt" />
-      </CallToAction>
-    </div>
+    <CallToAction href="mailto:mathias@herholdt.dev">
+      Message me
+      <Icon icon="paper-plane-tilt" />
+    </CallToAction>
   </div>
 
-  <div class="xs:flex hidden flex-col sm:justify-between">
+  <div class="hidden flex-col xs:flex sm:justify-between">
     <p class="text-sm font-light">
       Made with 💜 in <a
         href="https://astro.build"
